@@ -1,0 +1,87 @@
+return {
+  {
+    "ibhagwan/fzf-lua",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+      "otavioschwanck/fzf-lua-enchanted-files"
+    },
+    opts = {
+      keymap = {
+        fzf = {
+          ["ctrl-q"] = "select-all+accept",
+        },
+      },
+      files = {
+        -- use oldfiles history, so recent files appear on top
+        oldfiles = true,
+        -- optional: limit how many recent files are remembered
+        oldfiles_limit = 100,
+      }
+    },
+    keys = {
+      {
+        "<leader><space>",
+        function()
+          require("fzf-lua-enchanted-files").files()
+        end,
+        desc = "Files",
+      },
+      {
+        "<leader>sp",
+        function()
+          require("fzf-lua").live_grep()
+        end,
+        desc = "Live Grep",
+      },
+      {
+        "<leader>sh",
+        function()
+          require("fzf-lua").help_tags()
+        end,
+        desc = "Help Tags",
+      },
+      {
+        "<leader>sr",
+        function()
+          require("fzf-lua").oldfiles()
+        end,
+        desc = "Recent Files",
+      },
+      {
+        "<leader>,",
+        function()
+          require("fzf-lua").buffers()
+        end,
+        desc = "Buffers",
+      },
+      {
+        "<leader><cr>",
+        function()
+          require("fzf-lua").resume()
+        end,
+        desc = "Resume FZF",
+      },
+      {
+        "<leader><tab>",
+        function()
+          require("fzf-lua").git_status()
+        end,
+        desc = "Git Status",
+      },
+      {
+        "<leader>sd",
+        function()
+          require("fzf-lua").live_grep({ cwd = vim.fn.fnamemodify(vim.fn.expand("%:~:h"), ":.") })
+        end,
+        desc = "Live Grep On Current Folder",
+      },
+      {
+        "<leader>sD",
+        function()
+          require("neomood.fzf-lua-utils").live_grep_on_folder()
+        end,
+        desc = "Live Grep On Specific Folder",
+      },
+    }
+  },
+}
