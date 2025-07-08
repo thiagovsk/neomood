@@ -19,6 +19,8 @@ return {
 
       logo = string.rep("\n", 8) .. logo .. "\n\n"
 
+      local neovim_file_path = vim.fn.stdpath("config")
+
       local opts = {
         theme = "doom",
         hide = {
@@ -33,8 +35,8 @@ return {
             { action = 'lua require("persistence").load()', desc = " Restore Session", icon = " ", key = "s" },
             { action = "FzfLua files", desc = " Find file", icon = " ", key = "f" },
             { action = "Arrow open", desc = " Arrow", icon = "󱡁 ", key = "a" },
-            { action = "edit docs/installation.md", desc = " Documentation", icon = "󱔗 ", key = "d" },
-            { action = "edit handbook.md", desc = " Quick Reference", icon = " ", key = "h" },
+            { action = "edit " .. neovim_file_path .. "/docs/installation.md", desc = " Documentation", icon = "󱔗 ", key = "d" },
+            { action = "edit " .. neovim_file_path .. "/docs/handbook.md", desc = " Quick Reference", icon = " ", key = "h" },
           },
           footer = function()
             local stats = require("lazy").stats()
