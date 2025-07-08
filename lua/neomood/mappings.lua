@@ -84,11 +84,13 @@ function M.set()
   n("<leader>rI", require("neomood.lang_helpers.ruby").reset_rails_db, "Find Migration")
   n("<leader>rK", require("neomood.lang_helpers.ruby").kill_ruby_instances, "Find Migration")
 
+  local neovim_file_path = vim.fn.stdpath("config")
+
   -- h
   n("<leader>hD", ":!rm -rf ~/.local/share/nvim/swap/*<CR>", "Delete SWP files")
   n("<leader>hr", require("neomood.lsp-utils").restart_lsp, "Restart LSP")
-  n("<leader>hhd", "<cmd>edit docs/installation.md<CR>", "Open Documentation")
-  n("<leader>hhh", "<cmd>edit handbook.md<CR>", "Open Handbook")
+  n("<leader>hhd", "<cmd>edit" .. neovim_file_path .. "/docs/mappings.md<CR>", "Open Documentation")
+  n("<leader>hhh", "<cmd>edit" .. neovim_file_path .. "/handbook.md<CR>", "Open Handbook")
 
   -- w
   n("<leader>wq", "<C-w>q", "Kill Window")
