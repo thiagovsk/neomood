@@ -127,6 +127,8 @@ This document provides a comprehensive reference of all key mappings in NeoMood,
 - `<leader><cr>` - Resume FZF
 - `<leader><tab>` - Git status
 - `<leader>sd` - Live grep on current folder
+- `<leader>ss` - Search in current buffer
+- `<leader>so` - Search in all open buffers
 - `<leader>sD` - Live grep on specific folder
 
 ### Git Operations - [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)

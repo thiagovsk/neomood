@@ -55,6 +55,8 @@ This handbook provides quick access to the most important mappings and commands 
 ### Search & Replace
 - `<leader>sp` - Live grep
 - `<leader>sd` - Live grep current folder
+- `<leader>ss` - Search in current buffer
+- `<leader>so` - Search in all open buffers
 - `<leader>sR` - Replace in files (Spectre)
 - `gq` - Search replace word/selection
 

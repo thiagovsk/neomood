@@ -76,6 +76,20 @@ return {
         desc = "Live Grep On Current Folder",
       },
       {
+        "<leader>ss",
+        function()
+          require("fzf-lua").blines({ previewer = false })
+        end,
+        desc = "Search on buffer",
+      },
+      {
+        "<leader>so",
+        function()
+          require("fzf-lua").lines()
+        end,
+        desc = "Search on open buffers",
+      },
+      {
         "<leader>sD",
         function()
           require("neomood.fzf-lua-utils").live_grep_on_folder()
