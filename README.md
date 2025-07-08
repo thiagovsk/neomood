@@ -19,7 +19,7 @@ Clone this repository to your Neovim configuration directory:
 # Backup your existing config (optional)
 mv ~/.config/nvim ~/.config/nvim.backup
 
-# Clone NeoMood
+# Clone NeoMood (from your fork)
 git clone https://github.com/yourusername/neomood.git ~/.config/nvim
 ```
 
@@ -28,7 +28,7 @@ git clone https://github.com/yourusername/neomood.git ~/.config/nvim
 To test NeoMood without replacing your current configuration:
 
 ```bash
-# Clone to a temporary directory
+# Clone to a temporary directory (change username for yourname, after you forked this repository)
 git clone https://github.com/yourusername/neomood.git ~/.config/neomood-test
 
 # Start Neovim with the test configuration
@@ -52,7 +52,7 @@ To receive updates while maintaining your customizations:
 1. **Add NeoMood as upstream remote**:
    ```bash
    cd ~/.config/nvim
-   git remote add upstream https://github.com/yourusername/neomood.git
+   git remote add upstream https://github.com/otavioschwanck/neomood.git
    ```
 
 2. **Fetch and merge updates**:
