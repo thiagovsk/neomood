@@ -243,6 +243,29 @@ This document provides a comprehensive reference of all key mappings in NeoMood,
 - `<C-p>` - Yanky cycle forward
 - `g<C-p>` - Yanky cycle backward
 
+## Ruby-Specific Mappings (Ruby files only)
+
+These mappings are only available when editing Ruby files:
+
+### Code Formatting & Quality
+- `<leader>=` - Run Rubocop auto-fix on current file
+- `<leader>cF` - Run Rubocop auto-fix on current file
+
+### Ruby Development
+- `<leader>mc` - Get class name
+- `<leader>mC` - Search class name
+- `<leader>md` - Comment Rubocop violation
+- `<leader>mf` - Create function from text (Normal) / Extract to function (Visual)
+
+### Debugging
+- `<leader>d` - Add `binding.pry` debugger
+- `<leader>D` - Clear all `binding.pry` statements
+
+### Testing
+- `<leader>tc` - Clear RSpec diagnostics
+- `<leader>a` - Go to test file
+- `<leader>A` - Go to test file (split window)
+
 ## Tips
 
 1. **Leader Key**: The leader key is `<space>` by default

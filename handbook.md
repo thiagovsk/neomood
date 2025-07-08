@@ -52,6 +52,13 @@ This handbook provides quick access to the most important mappings and commands 
 - `<leader>rr` - Rails console
 - `<leader>ri` - Rails db:migrate
 
+### Ruby-Specific (Ruby files only)
+- `<leader>=` - Rubocop auto-fix
+- `<leader>d` - Add binding.pry
+- `<leader>D` - Clear all binding.pry
+- `<leader>a` - Go to test file
+- `<leader>mf` - Create/extract function
+
 ### Search & Replace
 - `<leader>sp` - Live grep
 - `<leader>sw` - Grep word at cursor / visual selection
