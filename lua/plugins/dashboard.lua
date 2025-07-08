@@ -33,6 +33,8 @@ return {
             { action = 'lua require("persistence").load()', desc = " Restore Session", icon = " ", key = "s" },
             { action = "FzfLua files", desc = " Find file", icon = " ", key = "f" },
             { action = "Arrow open", desc = " Arrow", icon = "󱡁 ", key = "a" },
+            { action = "edit docs/installation.md", desc = " Documentation", icon = "󱔗 ", key = "d" },
+            { action = "edit handbook.md", desc = " Quick Reference", icon = " ", key = "h" },
           },
           footer = function()
             local stats = require("lazy").stats()

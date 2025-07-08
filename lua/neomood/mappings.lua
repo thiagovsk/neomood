@@ -87,6 +87,8 @@ function M.set()
   -- h
   n("<leader>hD", ":!rm -rf ~/.local/share/nvim/swap/*<CR>", "Delete SWP files")
   n("<leader>hr", require("neomood.lsp-utils").restart_lsp, "Restart LSP")
+  n("<leader>hhd", "<cmd>edit docs/installation.md<CR>", "Open Documentation")
+  n("<leader>hhh", "<cmd>edit handbook.md<CR>", "Open Handbook")
 
   -- w
   n("<leader>wq", "<C-w>q", "Kill Window")

@@ -12,6 +12,7 @@ return {
         { "<leader>b",  group = "Buffer" },
         { "<leader>c",  group = "Code" },
         { "<leader>cc", group = "Toggle Case" },
+        { "<leader>hh", group = "Documentation" },
         { "<leader>f",  group = "File" },
         { "<leader>g",  group = "Git" },
         { "<leader>h",  group = "Help" },
