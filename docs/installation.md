@@ -112,6 +112,8 @@ brew install fd tmux alacritty
 
 Replace your current Neovim configuration:
 
+First, fork this repository
+
 ```bash
 # Backup existing configuration
 mv ~/.config/nvim ~/.config/nvim.backup
@@ -143,6 +145,48 @@ mv ~/.config/nvim ~/.config/nvim.backup
 
 # Move test config to main location
 mv ~/.config/neomood-test ~/.config/nvim
+```
+
+## Upgrading NeoMood
+
+To keep your NeoMood installation up to date with the latest features and bug fixes:
+
+### Setting Up Upstream Remote
+
+If you installed NeoMood by forking the repository, you should add the original repository as an upstream remote:
+
+```bash
+# Navigate to your NeoMood directory
+cd ~/.config/nvim
+
+# Add the original repository as upstream
+git remote add upstream https://github.com/otavioschwanck/neomood.git
+
+# Verify the remote was added
+git remote -v
+```
+
+### Updating Your Installation
+
+To install updates, merge the upstream changes with your local configuration:
+
+```bash
+# Fetch the latest changes from upstream
+git fetch upstream
+
+# Merge upstream changes with your master branch
+git checkout master
+git merge upstream/master
+```
+
+If you have made local customizations, you may need to resolve merge conflicts. After merging, restart Neovim to apply any new plugin configurations or updates.
+
+### Updating Plugins
+
+After upgrading NeoMood, also update your plugins:
+
+```vim
+:Lazy update
 ```
 
 ## Post-Installation Setup
