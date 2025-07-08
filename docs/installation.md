@@ -23,9 +23,10 @@ Before installing NeoMood, ensure you have:
 - **fd** for faster file finding
 
 ### Optional Dependencies
-- **LazyGit** for Git integration
+- **Alacritty** for terminal integration (highly recommended)
+- **LazyGit** for Git integration (highly recommended)
 
-## Installation by Operating System
+## Installing dependencies by OS
 
 ### Ubuntu/Debian
 
@@ -115,7 +116,7 @@ Replace your current Neovim configuration:
 # Backup existing configuration
 mv ~/.config/nvim ~/.config/nvim.backup
 
-# Clone NeoMood
+# Clone NeoMood (change username with yours)
 git clone https://github.com/yourusername/neomood.git ~/.config/nvim
 
 # Start Neovim (plugins will auto-install)
@@ -127,7 +128,7 @@ nvim
 Try NeoMood without affecting your current setup:
 
 ```bash
-# Clone to test directory
+# Clone to test directory (change username with yours)
 git clone https://github.com/yourusername/neomood.git ~/.config/neomood-test
 
 # Start Neovim with test config
@@ -173,13 +174,27 @@ Some language servers may require additional setup:
 :LspInstall
 ```
 
-### 4. Plugin Updates
 
-To update all plugins:
+### 4. Tmux + Alacritty Setup (Highly Recommended)
 
-```vim
-:Lazy update
+NeoMood is designed to work seamlessly with tmux and Alacritty for the optimal development experience:
+
+### Quick Setup
+```bash
+# Install TPM (Tmux Plugin Manager)
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# Copy configurations
+cp ~/.config/neomood/extra/.tmux.conf ~/.tmux.conf
+cp ~/.config/neomood/extra/alacritty.toml ~/.config/alacritty/alacritty.toml
+
+# Start tmux and install plugins
+tmux
+# Press Ctrl+x then I (capital i) to install plugins
 ```
+
+For detailed tmux workflow setup, see the [Tmux Workflow Guide](tmux-workflow.md).
+
 
 ### 5. AI Code Completion Setup (Optional)
 
@@ -190,6 +205,15 @@ NeoMood includes Codeium for AI-powered code completion. To enable it:
 ```
 
 Follow the prompts to authenticate with Codeium. If you don't want AI completion, you can remove the plugin by deleting `lua/plugins/codeium.lua`.
+
+### 6. Plugin Updates (Optional)
+
+To update all plugins:
+
+```vim
+:Lazy update
+```
+
 
 ## Troubleshooting
 
@@ -218,26 +242,6 @@ If you encounter issues:
 1. Check `:checkhealth` output
 2. Review the error messages carefully
 3. Open an issue with your system details and error logs
-
-## Tmux + Alacritty Setup (Highly Recommended)
-
-NeoMood is designed to work seamlessly with tmux and Alacritty for the optimal development experience:
-
-### Quick Setup
-```bash
-# Install TPM (Tmux Plugin Manager)
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
-# Copy configurations
-cp ~/.config/neomood/extra/.tmux.conf ~/.tmux.conf
-cp ~/.config/neomood/extra/alacritty.toml ~/.config/alacritty/alacritty.toml
-
-# Start tmux and install plugins
-tmux
-# Press Ctrl+x then I (capital i) to install plugins
-```
-
-For detailed tmux workflow setup, see the [Tmux Workflow Guide](tmux-workflow.md).
 
 ## Next Steps
 

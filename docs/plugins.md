@@ -16,7 +16,7 @@ This document provides a comprehensive overview of all plugins included in NeoMo
 
 ### [FZF Lua Explorer](https://github.com/otavioschwanck/fzf-lua-explorer.nvim)
 **Purpose**: File explorer with FZF integration  
-**Features**: Create files from input, integrated with FZF  
+**Features**: An quick explorer to navigate/create files.
 **Key Mappings**: `<leader>.` (explorer)
 
 ### [Neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim)
@@ -192,7 +192,7 @@ This document provides a comprehensive overview of all plugins included in NeoMo
 ### [Rainbow CSV](https://github.com/cameron-wags/rainbow_csv.nvim)
 **Purpose**: CSV file highlighting and manipulation  
 **Supported Formats**: CSV, TSV, pipe-separated, RFC CSV  
-**Features**: Rainbow column highlighting, CSV commands
+**Features**: Rainbow column highlighting, CSV commands, SPC m to see shortcuts.
 
 ### [Obsidian](https://github.com/epwalsh/obsidian.nvim)
 **Purpose**: Obsidian note-taking integration  

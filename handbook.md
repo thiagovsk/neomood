@@ -72,8 +72,7 @@ This handbook provides quick access to the most important mappings and commands 
 - `gw` - Change word under cursor
 - `J` / `K` (Visual) - Move lines up/down
 - `<` / `>` (Visual) - Indent/outdent
-- `p` / `P` - Paste with yanky
-- `<C-p>` - Cycle yanks
+- `<C-p>` - Cycle yanks (after paste)
 
 ### Multiple Cursors
 - `<C-j>` / `<C-k>` - Add cursor below/above
@@ -87,6 +86,7 @@ This handbook provides quick access to the most important mappings and commands 
 ### Tmux Integration
 - `<leader>gg` - LazyGit
 - `<leader>ll` - List terminals
+- `<leader>lf` - Find registered terminals
 - `<leader>l` (Visual) - Send to terminal
 
 ## Quick Commands
