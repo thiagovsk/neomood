@@ -116,7 +116,6 @@ family = "Your Nerd Font Name"  # e.g., "JetBrains Mono Nerd Font"
 
 The configuration includes special handling for Neovim:
 
-- `C-,` and `C-;` work for both tmux panes AND Neovim splits
 - Seamless navigation between tmux and Neovim
 - Tmux-aware commands in NeoMood (see tmux-awesome-manager plugin)
 

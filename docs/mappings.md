@@ -100,6 +100,11 @@ This document provides a comprehensive reference of all key mappings in NeoMood,
 - `<C-u>` - Scroll docs up
 - `<C-d>` - Scroll docs down
 
+### Snippets - [L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip) & [rafamadriz/friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
+- `<C-N>` - Expand snippet or jump to next placeholder
+- `<C-P>` - Jump to previous placeholder
+- `<BS>` - Delete and jump in snippet mode
+
 ### Flash Jump - [folke/flash.nvim](https://github.com/folke/flash.nvim)
 - `s` - Flash jump
 - `r` (Operator) - Remote Flash

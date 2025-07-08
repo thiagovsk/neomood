@@ -70,6 +70,10 @@ This handbook provides quick access to the most important mappings and commands 
 - `<C-n>` - Add cursor on match
 - `<C-q>` - Skip cursor on match
 
+### Snippets
+- `<C-N>` - Expand snippet or jump to next placeholder
+- `<C-P>` - Jump to previous placeholder
+
 ### Tmux Integration
 - `<leader>gg` - LazyGit
 - `<leader>ll` - List terminals
