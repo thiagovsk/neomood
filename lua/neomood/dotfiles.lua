@@ -4,6 +4,8 @@ local fzf = require("fzf-lua")
 
 local dotfiles = {
   "~/.zshrc", -- add your dotfiles here. Then, access it with SPC f p
+  "~/.config/alacritty/alacritty.toml",
+  "~/.tmux.conf",
 }
 
 function M.call(files)
