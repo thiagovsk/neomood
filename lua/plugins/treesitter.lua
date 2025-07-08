@@ -4,6 +4,7 @@ return {
     dependencies = {
       "RRethy/nvim-treesitter-endwise",
     },
+    build = ":TSUpdate",
     event = "VeryLazy",
     config = function()
       require("nvim-treesitter.configs").setup({

@@ -24,6 +24,8 @@ return {
       local lspconfig = require("lspconfig")
       local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+      vim.diagnostic.config({ virtual_text = true })
+
       vim.lsp.util._get_position_encodings = function()
         return { "utf-16" }
       end
