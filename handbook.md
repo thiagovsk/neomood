@@ -54,6 +54,7 @@ This handbook provides quick access to the most important mappings and commands 
 
 ### Search & Replace
 - `<leader>sp` - Live grep
+- `<leader>sw` - Grep word at cursor / visual selection
 - `<leader>sd` - Live grep current folder
 - `<leader>ss` - Search in current buffer
 - `<leader>so` - Search in all open buffers

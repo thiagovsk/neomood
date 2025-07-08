@@ -48,6 +48,21 @@ return {
         desc = "Recent Files",
       },
       {
+        "<leader>sw",
+        function()
+          require("fzf-lua").grep_cword()
+        end,
+        desc = "Grep word at cursor",
+      },
+      {
+        "<leader>sw",
+        function()
+          require("fzf-lua").grep_visual()
+        end,
+        desc = "Grep region",
+        mode = "v",
+      },
+      {
         "<leader>,",
         function()
           require("fzf-lua").buffers()

@@ -123,6 +123,7 @@ This document provides a comprehensive reference of all key mappings in NeoMood,
 - `<leader>sp` - Live grep
 - `<leader>sh` - Help tags
 - `<leader>sr` - Recent files
+- `<leader>sw` - Grep word at cursor (Normal) / Grep visual selection (Visual)
 - `<leader>,` - Buffers
 - `<leader><cr>` - Resume FZF
 - `<leader><tab>` - Git status

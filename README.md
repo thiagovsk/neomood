@@ -1,5 +1,7 @@
 # NeoMood
 
+![neomood](https://i.imgur.com/ODqoH3t.png)
+
 A performance-optimized Neovim configuration designed for Ruby on Rails and JavaScript/TypeScript development.
 
 ## Features
