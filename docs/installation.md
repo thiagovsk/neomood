@@ -181,6 +181,16 @@ To update all plugins:
 :Lazy update
 ```
 
+### 5. AI Code Completion Setup (Optional)
+
+NeoMood includes Codeium for AI-powered code completion. To enable it:
+
+```vim
+:Codeium Auth
+```
+
+Follow the prompts to authenticate with Codeium. If you don't want AI completion, you can remove the plugin by deleting `lua/plugins/codeium.lua`.
+
 ## Troubleshooting
 
 ### Common Issues
@@ -207,8 +217,7 @@ If you encounter issues:
 
 1. Check `:checkhealth` output
 2. Review the error messages carefully
-3. Consult the [troubleshooting section](troubleshooting.md)
-4. Open an issue with your system details and error logs
+3. Open an issue with your system details and error logs
 
 ## Tmux + Alacritty Setup (Highly Recommended)
 
