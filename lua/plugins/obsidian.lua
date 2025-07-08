@@ -1,3 +1,9 @@
+if true then
+  return {}
+end
+
+-- Create your notes folder first (default is ~/notes), then, remove the 4 lines above
+
 return {
   "epwalsh/obsidian.nvim",
   version = "*", -- recommended, use latest release instead of latest commit

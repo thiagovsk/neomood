@@ -178,6 +178,9 @@ This document provides a comprehensive reference of all key mappings in NeoMood,
 - `<esc>` - Toggle/clear cursors (when multiple active)
 
 ### Notes (Obsidian) - [epwalsh/obsidian.nvim](https://github.com/epwalsh/obsidian.nvim)
+
+Obs: You need to enable the plugin on obsidian.lua first to use.
+
 - `<leader>sn` - Search notes
 - `<leader>bn` - New note
 
