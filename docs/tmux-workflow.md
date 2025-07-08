@@ -212,9 +212,79 @@ tmux ls
 
 ```
 
-### Integration with NeoMood
-- Use tmux-awesome-manager plugin commands
-- Send visual selections to tmux with `<leader>l`
-- Leverage project-specific terminal commands
+## Tmux Awesome Manager - The Power Behind the Workflow
 
-The tmux + Alacritty setup transforms NeoMood from a simple editor into a complete development environment, providing the foundation for efficient Rails and JavaScript development workflows.
+The [tmux-awesome-manager](https://github.com/otavioschwanck/tmux-awesome-manager.nvim) plugin is the heart of NeoMood's terminal integration, providing:
+
+### Core Features
+- **Project-specific commands**: Define custom commands per project
+- **Session management**: Create and switch between project sessions seamlessly
+- **Code execution**: Send visual selections or entire files to tmux panes
+- **Terminal management**: List, create, and kill terminal sessions
+- **Custom key mappings**: Map any command to any key combination
+
+### Key Mappings
+- `<leader>lf` - Search and execute project commands
+- `<leader>l` (Visual) - Send visual selection to tmux terminal
+- `<leader>ll` - List and switch between open terminals
+- `<leader>lk` - Kill all terminal sessions
+- `<leader>#` - Run all project-defined startup commands
+
+### Pre-configured Development Commands
+- `<leader>gg` - LazyGit in tmux window
+- `<leader>rr` - Rails console in tmux window
+- `<leader>rb` - Bundle install (auto-closes after 2s)
+- `<leader>rg` - Rails generate (prompts for generator type)
+- `<leader>rd` - Rails destroy (prompts for what to destroy)
+- `<leader>ri` - Rails db:migrate (auto-closes after 4s)
+- `<leader>oy` - Yarn install
+- `<leader>+` - Run Rubocop auto-fix (auto-closes after 2s)
+
+### Configuration Options
+
+**1. Per-Project Commands** (in `lua/plugins/tmux-awesome-manager.lua`):
+```lua
+per_project_commands = {
+  my_project = { { cmd = "rails s", name = "rails server" } },
+  frontend = { { cmd = "yarn dev", name = "dev server" } },
+}
+```
+
+**2. Custom Key Mappings** (like the Rails console example):
+```lua
+set("<leader>rr", {
+  cmd = "rails console",
+  name = "rails console",
+  open_as = "window",
+  visit_first_call = true,
+})
+```
+
+**3. Interactive Commands** (with prompts):
+```lua
+set("<leader>rg", {
+  cmd = "rails generate %1",
+  name = "Rails Generate",
+  questions = {
+    { question = "Rails generate: ", required = true }
+  },
+})
+```
+
+### Command Options
+- `cmd` - The command to run
+- `name` - Display name for the command
+- `open_as` - "window", "pane", or "separated_session"
+- `visit_first_call` - Whether to focus the terminal on first run
+- `close_on_timer` - Auto-close after N seconds
+- `focus_when_call` - Whether to focus when running
+- `questions` - Interactive prompts for command parameters
+
+### Workflow Power
+- **Code Testing**: Select Ruby code and send it directly to a Rails console
+- **Custom Commands**: Map any terminal command to a key combination
+- **Multi-terminal Workflow**: Run server, console, tests, and git in separate panes
+- **Project Context**: Different commands available per project
+- **Seamless Integration**: All terminal operations accessible from within Neovim
+
+The tmux + Alacritty + tmux-awesome-manager combination transforms NeoMood from a simple editor into a complete development environment, providing unmatched efficiency for Rails and JavaScript development workflows.

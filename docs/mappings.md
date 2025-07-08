@@ -41,7 +41,7 @@ This document provides a comprehensive reference of all key mappings in NeoMood,
 - `<leader>fy` - Copy relative path
 - `<leader>fl` - Copy relative path with line number
 - `<leader>fY` - Copy full path
-- `<leader>fp` - Open dotfiles
+- `<leader>fp` - Open dotfiles (quick access to .zshrc, .tmux.conf, alacritty.toml - customizable in `lua/neomood/dotfiles.lua`)
 
 ### Rails Development
 - `<leader>rm` - Find Model
@@ -265,6 +265,19 @@ These mappings are only available when editing Ruby files:
 - `<leader>tc` - Clear RSpec diagnostics
 - `<leader>a` - Go to test file
 - `<leader>A` - Go to test file (split window)
+
+## CSV-Specific Mappings (CSV files only)
+
+These mappings are only available when editing CSV files:
+
+### Delimiter Configuration
+- `<leader>m;` - Set delimiter to semicolon (`;`)
+- `<leader>m|` - Set delimiter to pipe (`|`)
+
+### CSV Operations
+- `<leader>ma` - Align CSV columns
+- `<leader>ms` - Shrink CSV columns
+- `<leader>ml` - Lint CSV file
 
 ## Tips
 

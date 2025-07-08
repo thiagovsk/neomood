@@ -10,6 +10,7 @@ return {
       },
     },
     config = function()
+      -- configure your alternate-file (see gh for more info)
       require("telescope-alternate").setup({
         picker = "fzf-lua",
         mappings = {
