@@ -275,6 +275,10 @@ To update all plugins:
 
 ### Common Issues
 
+**Problem with endwise (tree-sitter)**:
+- Do a :Lazy update
+- Do a :Lazy build nvim-treesitter-endwise
+
 **Plugins not loading**:
 - Ensure you have internet connection
 - Try `:Lazy` and then press `I` to install plugins manually
