@@ -589,7 +589,7 @@ Por padrão, as pesquisas são sensíveis a maiúsculas. Você pode:
 
   6. Coloque o cursor dentro das aspas simples ao redor de 'mundo'.
 
-  7. Digite cs'<q> para alterar `'` para `<q>`.
+  7. Digite cs't para alterar `'` para `<q>`. (html tag)
 
 ---> Altere [texto] e "olá" e 'mundo' envolvimentos
 

@@ -589,7 +589,7 @@ By default, searches are case sensitive. You can:
 
   6. Put cursor inside the single quotes around 'world'.
 
-  7. Type cs'<q> to change `'` to `<q>`.
+  7. Type cs't to change `'` to `<q>`. (html tag)
 
 ---> Change [text] and "hello" and 'world' surroundings
 
