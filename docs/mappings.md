@@ -13,17 +13,16 @@ This document provides a comprehensive reference of all key mappings in NeoMood,
 - `ge` - Switch to alternate buffer
 - `x` - Delete character (no yank)
 - `<leader>qq` - Quit all (`:qall`)
-- `<Esc>` - Clear search highlight
 
 ### Text Manipulation
-- `gw` - Change word under cursor (search and replace)
+- `gq` - Change word under cursor (search and replace)
 - `J` (Visual) - Move selected lines down
 - `K` (Visual) - Move selected lines up
 - `yb` - Yank entire buffer to clipboard
 - `<` (Visual) - Outdent and keep selection
 - `>` (Visual) - Indent and keep selection
 
-### Command Mode Navigation
+### Command Mode Navigation (:)
 - `<C-h>` - Move left
 - `<C-l>` - Move right
 - `<C-k>` - Move word right
@@ -142,7 +141,7 @@ This document provides a comprehensive reference of all key mappings in NeoMood,
 - `<leader>gR` - Reset buffer
 - `<leader>gp` - Preview hunk
 - `<leader>gb` - Blame line
-- `ih` - Select hunk (text object)
+- `ih` - Select hunk (text object, example: vih)
 
 ### Git Blame - [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive)
 - `<leader>gB` - Git blame (fugitive)

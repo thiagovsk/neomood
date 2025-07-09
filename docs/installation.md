@@ -24,7 +24,7 @@ Before installing NeoMood, ensure you have:
 
 ### Optional Dependencies
 - **Alacritty** for terminal integration (highly recommended)
-- **LazyGit** for Git integration (highly recommended)
+- **LazyGit** for Git integration (highly recommended) - A simple terminal UI for Git commands with excellent keyboard shortcuts and visual diff support. Essential for the NeoMood workflow as it provides seamless Git operations without leaving the terminal environment.
 
 ## Installing dependencies by OS
 
@@ -53,6 +53,12 @@ gem install neovim
 
 # Install optional tools
 sudo apt install fd-find tmux alacritty
+
+# Install LazyGit
+LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+tar xf lazygit.tar.gz lazygit
+sudo install lazygit /usr/local/bin
 ```
 
 ### Arch Linux
@@ -76,6 +82,9 @@ gem install neovim
 
 # Install tools
 sudo pacman -S fd tmux alacritty
+
+# Install LazyGit
+sudo pacman -S lazygit
 ```
 
 ### macOS
@@ -104,6 +113,9 @@ gem install neovim
 
 # Install optional tools
 brew install fd tmux alacritty
+
+# Install LazyGit
+brew install lazygit
 ```
 
 ## Installing NeoMood

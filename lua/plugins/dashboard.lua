@@ -37,6 +37,7 @@ return {
             { action = "Arrow open", desc = " Arrow", icon = "󱡁 ", key = "a" },
             { action = "edit " .. neovim_file_path .. "/docs/mappings.md", desc = " Documentation", icon = "󱔗 ", key = "d" },
             { action = "edit " .. neovim_file_path .. "/handbook.md", desc = " Handbook", icon = " ", key = "h" },
+            { action = 'lua require("neomood.tutorial").open_tutorial()', desc = " Tutorial", icon = "󱚌 ", key = "t" },
           },
           footer = function()
             local stats = require("lazy").stats()

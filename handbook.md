@@ -131,7 +131,8 @@ This handbook provides quick access to the most important mappings and commands 
 - `aa` / `ia`  Inside/outside arguments
 - `ih` - Git hunk
 - `vq` - Quotes content
-- `vij` - Indentation block
+- `vij` - Indentation block (awesome to select methods)
+- `vii` - Inner indentation block
 
 ## Modes Quick Reference
 

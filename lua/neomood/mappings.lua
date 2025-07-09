@@ -91,6 +91,7 @@ function M.set()
   n("<leader>hr", require("neomood.lsp-utils").restart_lsp, "Restart LSP")
   n("<leader>hhd", "<cmd>edit" .. neovim_file_path .. "/docs/mappings.md<CR>", "Open Documentation")
   n("<leader>hhh", "<cmd>edit" .. neovim_file_path .. "/handbook.md<CR>", "Open Handbook")
+  n("<leader>hht", require("neomood.tutorial").open_tutorial, "Open Tutorial")
 
   -- w
   n("<leader>wq", "<C-w>q", "Kill Window")
