@@ -11,8 +11,9 @@ Welcome to Neovim with the NeoMood configuration! This guide will teach you ever
 4. [Lesson 4: Text Objects](#lesson-4-text-objects)
 5. [Lesson 5: Searching and Navigation](#lesson-5-searching-and-navigation)
 6. [Lesson 6: Basic Macros](#lesson-6-basic-macros)
-7. [NeoMood Features](#neomood-features)
-8. [Summary](#summary)
+7. [Lesson 7: Copy and Paste Operations](#lesson-7-copy-and-paste-operations)
+8. [NeoMood Features](#neomood-features)
+9. [Summary](#summary)
 
 ## What is NeoMood?
 
@@ -582,6 +583,166 @@ NOTE: The lines should now read: "Hello, friend!", "Hello, user!", "Hello, every
 ---> Task four
 
 NOTE: Macros are powerful for repetitive editing tasks!
+
+## Lesson 7: Copy and Paste Operations
+
+### Lesson 7.1: BASIC COPY AND PASTE
+
+** Type yy to yank (copy) a line and p to paste it. **
+
+  1. Move the cursor to the line below marked --->.
+
+  2. Type yy to copy the entire line.
+
+  3. Move the cursor to the end of the block of practice lines.
+
+  4. Type p to paste the line after the cursor.
+
+  5. Type P (capital p) to paste the line before the cursor.
+
+---> Copy this line and practice pasting it in different places
+---> Another line for copy practice
+---> Last line of the practice block
+
+### Lesson 7.2: COPY WORDS AND CHARACTERS
+
+** Use yw to copy words and different movements with y. **
+
+  1. Move the cursor to the line below marked --->.
+
+  2. Put cursor on "quick" and type yw to copy the word.
+
+  3. Move to the end of the line and type p to paste.
+
+  4. Put cursor on "brown" and type y2w to copy two words.
+
+  5. Move to another position and paste with p.
+
+  6. Put cursor on "j" in "jumps" and type y$ to copy to end of line.
+
+  7. Go to a new position and paste.
+
+---> The quick brown fox jumps over the lazy dog
+
+### Lesson 7.3: VISUAL SELECTION COPY AND PASTE
+
+** Use visual mode for precise copying. **
+
+  1. Move to the line below marked --->.
+
+  2. Put cursor on "programming" and type v to start visual selection.
+
+  3. Move cursor to select "programming language" (use e to go to end of words).
+
+  4. Type y to copy the visual selection.
+
+  5. Move to the end of the line and type p to paste.
+
+---> Neovim is a powerful programming language editor for developers
+
+  6. Put cursor anywhere on the line below.
+
+  7. Type V to select the entire line.
+
+  8. Type y to copy the whole line.
+
+  9. Move to the bottom and type p to paste.
+
+---> This entire line will be copied using visual line mode
+
+### Lesson 7.4: COPY TO SPECIFIC REGISTERS
+
+** Use "ay to copy to register 'a' and "ap to paste from register 'a'. **
+
+  1. Move to the first line below marked --->.
+
+  2. Type "ayy to copy the line to register 'a'.
+
+  3. Move to the second line.
+
+  4. Type "byy to copy the line to register 'b'.
+
+  5. Move to the third line.
+
+  6. Type "cyy to copy the line to register 'c'.
+
+  7. Now paste them in reverse order: type "cp, then "bp, then "ap.
+
+---> First line goes to register a
+---> Second line goes to register b  
+---> Third line goes to register c
+
+### Lesson 7.5: COPY AND PASTE WITH TEXT OBJECTS
+
+** Combine copy with text objects for efficient copying. **
+
+  1. Move to the line below marked --->.
+
+  2. Put cursor inside the quotes around "copy this text".
+
+  3. Type yi" to copy inside the quotes.
+
+  4. Move to the end of the line and type p to paste.
+
+  5. Put cursor inside the parentheses around "and this too".
+
+  6. Type ya( to copy around the parentheses (including parentheses).
+
+  7. Move to a new position and paste with p.
+
+---> The message says "copy this text" and also (and this too) for practice
+
+  8. Put cursor on the word "function" below.
+
+  9. Type yiw to copy the inner word.
+
+  10. Move to the end and paste with p.
+
+  11. Put cursor on "complete" and type yaw to copy around the word (includes spaces).
+
+  12. Paste with p in a new position.
+
+---> This function should complete the copy practice exercises
+
+### Lesson 7.6: COPY TO SYSTEM CLIPBOARD
+
+** Use "+ to access system clipboard. **
+
+  1. Move to the line below marked --->.
+
+  2. Type "+yy to copy the line to system clipboard.
+
+  3. You can now paste this line in any other application (outside Neovim).
+
+  4. Type "+p to paste from system clipboard.
+
+---> This text will be copied to your system clipboard
+
+### Lesson 7.7: COPY AND PASTE PRACTICE
+
+** Practice different copy and paste combinations. **
+
+Practice text for copy and paste exercises:
+
+---> Line 1: Quick brown fox jumps over lazy dog
+---> Line 2: The "quoted text" and (parenthesized text) need copying  
+---> Line 3: function_name variable_name method_call()
+---> Line 4: Copy this {entire block} and [these brackets] too
+---> Line 5: Final practice line with words to copy
+
+**Exercise checklist:**
+1. Copy Line 1 with yy and paste it after Line 5
+2. Copy just "quoted text" (including quotes) from Line 2 
+3. Copy the word "function_name" from Line 3
+4. Copy from "Copy" to "brackets" in Line 4 using visual selection
+5. Copy Line 5 to register 'x' using "xyy
+6. Copy any line to system clipboard using "+yy
+7. Paste from register 'x' using "xp
+8. Copy two words at once using y2w
+9. Copy to end of line using y$
+10. Copy entire paragraph using visual line mode (V)
+
+NOTE: Remember - y copies, p pastes after cursor, P pastes before cursor!
 
 ## Working with Indentation
 

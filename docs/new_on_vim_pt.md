@@ -11,8 +11,9 @@ Bem-vindo ao Neovim com a configuração NeoMood! Este guia irá ensinar tudo qu
 4. [Lição 4: Objetos de Texto](#lição-4-objetos-de-texto)
 5. [Lição 5: Pesquisa e Navegação](#lição-5-pesquisa-e-navegação)
 6. [Lição 6: Macros Básicos](#lição-6-macros-básicos)
-7. [Recursos do NeoMood](#recursos-do-neomood)
-8. [Resumo](#resumo)
+7. [Lição 7: Operações de Copiar e Colar](#lição-7-operações-de-copiar-e-colar)
+8. [Recursos do NeoMood](#recursos-do-neomood)
+9. [Resumo](#resumo)
 
 ## O que é NeoMood?
 
@@ -582,6 +583,166 @@ NOTA: As linhas devem agora ficar: "Olá, amigo!", "Olá, usuário!", "Olá, tod
 ---> Tarefa quatro
 
 NOTA: Macros são poderosos para tarefas de edição repetitivas!
+
+## Lição 7: Operações de Copiar e Colar
+
+### Lição 7.1: COPIAR E COLAR BÁSICO
+
+** Digite yy para copiar uma linha e p para colá-la. **
+
+  1. Mova o cursor para a linha abaixo marcada com --->.
+
+  2. Digite yy para copiar a linha inteira.
+
+  3. Mova o cursor para o final do bloco de linhas de prática.
+
+  4. Digite p para colar a linha após o cursor.
+
+  5. Digite P (p maiúsculo) para colar a linha antes do cursor.
+
+---> Copie esta linha e pratique colando em diferentes lugares
+---> Outra linha para prática de cópia
+---> Última linha do bloco de prática
+
+### Lição 7.2: COPIAR PALAVRAS E CARACTERES
+
+** Use yw para copiar palavras e diferentes movimentos com y. **
+
+  1. Mova o cursor para a linha abaixo marcada com --->.
+
+  2. Coloque o cursor em "rápida" e digite yw para copiar a palavra.
+
+  3. Mova para o final da linha e digite p para colar.
+
+  4. Coloque o cursor em "raposa" e digite y2w para copiar duas palavras.
+
+  5. Mova para outra posição e cole com p.
+
+  6. Coloque o cursor em "p" de "pula" e digite y$ para copiar até o fim da linha.
+
+  7. Vá para uma nova posição e cole.
+
+---> A rápida raposa marrom pula sobre o cão preguiçoso
+
+### Lição 7.3: COPIAR E COLAR COM SELEÇÃO VISUAL
+
+** Use o modo visual para cópia precisa. **
+
+  1. Mova para a linha abaixo marcada com --->.
+
+  2. Coloque o cursor em "programação" e digite v para iniciar seleção visual.
+
+  3. Mova o cursor para selecionar "linguagem de programação" (use e para ir ao fim das palavras).
+
+  4. Digite y para copiar a seleção visual.
+
+  5. Mova para o final da linha e digite p para colar.
+
+---> Neovim é um poderoso editor de linguagem de programação para desenvolvedores
+
+  6. Coloque o cursor em qualquer lugar na linha abaixo.
+
+  7. Digite V para selecionar a linha inteira.
+
+  8. Digite y para copiar a linha toda.
+
+  9. Mova para o final e digite p para colar.
+
+---> Esta linha inteira será copiada usando modo visual de linha
+
+### Lição 7.4: COPIAR PARA REGISTRADORES ESPECÍFICOS
+
+** Use "ay para copiar ao registrador 'a' e "ap para colar do registrador 'a'. **
+
+  1. Mova para a primeira linha abaixo marcada com --->.
+
+  2. Digite "ayy para copiar a linha ao registrador 'a'.
+
+  3. Mova para a segunda linha.
+
+  4. Digite "byy para copiar a linha ao registrador 'b'.
+
+  5. Mova para a terceira linha.
+
+  6. Digite "cyy para copiar a linha ao registrador 'c'.
+
+  7. Agora cole em ordem reversa: digite "cp, depois "bp, depois "ap.
+
+---> Primeira linha vai para o registrador a
+---> Segunda linha vai para o registrador b
+---> Terceira linha vai para o registrador c
+
+### Lição 7.5: COPIAR E COLAR COM OBJETOS DE TEXTO
+
+** Combine cópia com objetos de texto para cópia eficiente. **
+
+  1. Mova para a linha abaixo marcada com --->.
+
+  2. Coloque o cursor dentro das aspas ao redor de "copie este texto".
+
+  3. Digite yi" para copiar dentro das aspas.
+
+  4. Mova para o final da linha e digite p para colar.
+
+  5. Coloque o cursor dentro dos parênteses ao redor de "e isto também".
+
+  6. Digite ya( para copiar ao redor dos parênteses (incluindo parênteses).
+
+  7. Mova para uma nova posição e cole com p.
+
+---> A mensagem diz "copie este texto" e também (e isto também) para prática
+
+  8. Coloque o cursor na palavra "função" abaixo.
+
+  9. Digite yiw para copiar a palavra interna.
+
+  10. Mova para o final e cole com p.
+
+  11. Coloque o cursor em "completa" e digite yaw para copiar ao redor da palavra (inclui espaços).
+
+  12. Cole com p em uma nova posição.
+
+---> Esta função deve completa os exercícios de prática de cópia
+
+### Lição 7.6: COPIAR PARA ÁREA DE TRANSFERÊNCIA DO SISTEMA
+
+** Use "+ para acessar a área de transferência do sistema. **
+
+  1. Mova para a linha abaixo marcada com --->.
+
+  2. Digite "+yy para copiar a linha para a área de transferência do sistema.
+
+  3. Agora você pode colar esta linha em qualquer outro aplicativo (fora do Neovim).
+
+  4. Digite "+p para colar da área de transferência do sistema.
+
+---> Este texto será copiado para sua área de transferência do sistema
+
+### Lição 7.7: PRÁTICA DE COPIAR E COLAR
+
+** Pratique diferentes combinações de copiar e colar. **
+
+Texto de prática para exercícios de copiar e colar:
+
+---> Linha 1: Raposa marrom pula sobre cão preguiçoso
+---> Linha 2: O "texto com aspas" e (texto com parênteses) precisam ser copiados
+---> Linha 3: nome_funcao nome_variavel chamada_metodo()
+---> Linha 4: Copie este {bloco inteiro} e [estes colchetes] também
+---> Linha 5: Linha final de prática com palavras para copiar
+
+**Lista de exercícios:**
+1. Copie a Linha 1 com yy e cole depois da Linha 5
+2. Copie apenas "texto com aspas" (incluindo aspas) da Linha 2
+3. Copie a palavra "nome_funcao" da Linha 3
+4. Copie de "Copie" até "colchetes" na Linha 4 usando seleção visual
+5. Copie a Linha 5 para o registrador 'x' usando "xyy
+6. Copie qualquer linha para área de transferência do sistema usando "+yy
+7. Cole do registrador 'x' usando "xp
+8. Copie duas palavras de uma vez usando y2w
+9. Copie até o fim da linha usando y$
+10. Copie parágrafo inteiro usando modo visual de linha (V)
+
+NOTA: Lembre-se - y copia, p cola após o cursor, P cola antes do cursor!
 
 ## Trabalhando com Indentação
 
