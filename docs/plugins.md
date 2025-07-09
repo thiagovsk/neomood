@@ -215,9 +215,13 @@ This document provides a comprehensive overview of all plugins included in NeoMo
 
 ## Additional Utility Plugins
 
+### [Nvim Surround](https://github.com/kylechui/nvim-surround)
+**Purpose**: Surround text with brackets, quotes, and other delimiters  
+**Features**: Change surroundings (cs), delete surroundings (ds), add surroundings (ys), visual mode surround (S)  
+**Key Operations**: `cs])` (change `[` to `)`), `ds"` (delete quotes), `ysiw"` (surround word with quotes), `S"` (surround selection)
+
 ### Core Utilities
 - [**Vim Rails**](https://github.com/tpope/vim-rails) - Rails navigation and commands
-- [**Nvim Surround**](https://github.com/kylechui/nvim-surround) - Surround text with brackets/quotes
 - [**Ruby Toolkit**](https://github.com/otavioschwanck/ruby-toolkit.nvim) - Ruby-specific enhancements
 - [**Friendly Snippets**](https://github.com/rafamadriz/friendly-snippets) - Snippet collection
 - [**Telescope Alternate**](https://github.com/otavioschwanck/telescope-alternate.nvim) - Alternate between related files

@@ -515,9 +515,185 @@ Por padrão, as pesquisas são sensíveis a maiúsculas. Você pode:
 ---> GATO em maiúsculas vs gato em minúsculas  
 ---> Pesquisa sensível a maiúsculas: gato Gato GATO
 
-## Lição 6: Macros Básicos
+### Lição 5.5: NAVEGAÇÃO BUSCAR E ATÉ CARACTERE
 
-### Lição 6.1: GRAVANDO UM MACRO
+** Digite f{char} para buscar um caractere, t{char} para ir até (antes) dele. **
+
+**Nota**: No NeoMood com Flash.nvim, os comandos f e t são aprimorados com feedback visual.
+
+  1. Mova para a linha abaixo marcada com --->.
+
+  2. Digite f] para buscar o caractere ']'.
+
+  3. Pressione f novamente para buscar o próximo caractere ']'.
+
+  4. Pressione F para buscar o caractere ']' anterior (para trás).
+
+  5. Digite t( para ir até (antes) do caractere '('.
+
+  6. Pressione t novamente para ir até o próximo caractere '('.
+
+---> A raposa [marrom] pula (sobre) o cachorro [preguiçoso] na (floresta)
+
+### Lição 5.6: COMBINANDO BUSCAR/ATÉ COM AÇÕES
+
+** Use f e t com comandos de deletar, alterar e copiar. **
+
+  1. Mova para a linha abaixo marcada com --->.
+
+  2. Digite df] para deletar até e incluindo o caractere ']'.
+
+  3. Digite dt) para deletar até (mas não incluindo) o caractere ')'.
+
+  4. Digite cf( para alterar até e incluindo o caractere '('.
+
+  5. Digite ct" para alterar até (mas não incluindo) o caractere '"'.
+
+  6. Digite yf; para copiar até e incluindo o caractere ';'.
+
+  7. Digite yt, para copiar até (mas não incluindo) o caractere ','.
+
+---> Remover [este texto] e (alterar isto) "texto citado"; manter, esta parte
+
+**Padrões comuns de uso f/t:**
+- `dt]` - Deletar até o caractere `]`
+- `df]` - Deletar até e incluindo o caractere `]`
+- `ct"` - Alterar até o caractere `"`
+- `cf"` - Alterar até e incluindo o caractere `"`
+- `yt)` - Copiar até o caractere `)`
+- `yf)` - Copiar até e incluindo o caractere `)`
+
+**Lembre-se com Flash.nvim**: 
+- `f` busca e inclui o caractere
+- `t` vai até (para antes) do caractere
+- Pressione `f` novamente para buscar a próxima ocorrência do mesmo caractere
+- Pressione `F` para buscar a ocorrência anterior do mesmo caractere
+- Pressione `t` novamente para ir até a próxima ocorrência
+- Pressione `T` para ir até a ocorrência anterior
+
+## Lição 6: Envolvimento de Texto (Nvim-Surround)
+
+### Lição 6.1: ALTERANDO ENVOLVIMENTOS
+
+** Digite cs seguido de dois caracteres para alterar envolvimentos. **
+
+  1. Mova para a linha abaixo marcada com --->.
+
+  2. Coloque o cursor dentro dos colchetes ao redor de "texto".
+
+  3. Digite cs]) para alterar `[` para `)`.
+
+  4. Coloque o cursor dentro das aspas ao redor de "olá".
+
+  5. Digite cs"' para alterar `"` para `'`.
+
+  6. Coloque o cursor dentro das aspas simples ao redor de 'mundo'.
+
+  7. Digite cs'<q> para alterar `'` para `<q>`.
+
+---> Altere [texto] e "olá" e 'mundo' envolvimentos
+
+### Lição 6.2: DELETANDO ENVOLVIMENTOS
+
+** Digite ds seguido de um caractere para deletar envolvimentos. **
+
+  1. Mova para a linha abaixo marcada com --->.
+
+  2. Coloque o cursor dentro das aspas ao redor de "deletar estas aspas".
+
+  3. Digite ds" para deletar as aspas envolventes.
+
+  4. Coloque o cursor dentro dos colchetes ao redor de "remover colchetes".
+
+  5. Digite ds] para deletar os colchetes envolventes.
+
+  6. Coloque o cursor dentro dos parênteses ao redor de "remover parênteses".
+
+  7. Digite ds) para deletar os parênteses envolventes.
+
+---> Deletar "deletar estas aspas" e [remover colchetes] e (remover parênteses)
+
+### Lição 6.3: ADICIONANDO ENVOLVIMENTOS A PALAVRAS
+
+** Digite ysiw seguido de um caractere para envolver uma palavra. **
+
+  1. Mova para a linha abaixo marcada com --->.
+
+  2. Coloque o cursor na palavra "olá".
+
+  3. Digite ysiw" para envolver a palavra com aspas.
+
+  4. Coloque o cursor na palavra "mundo".
+
+  5. Digite ysiw] para envolver a palavra com colchetes.
+
+  6. Coloque o cursor na palavra "vim".
+
+  7. Digite ysiw[ para envolver a palavra com colchetes e espaços.
+
+---> Envolver olá e mundo e vim com caracteres diferentes
+
+### Lição 6.4: ADICIONANDO ENVOLVIMENTOS A SELEÇÃO
+
+** Selecione texto com v, então digite S seguido de um caractere. **
+
+  1. Mova para a linha abaixo marcada com --->.
+
+  2. Coloque o cursor em "raposa marrom".
+
+  3. Digite v para começar a seleção visual.
+
+  4. Mova para selecionar "raposa marrom ágil".
+
+  5. Digite S" para envolver a seleção com aspas.
+
+  6. Coloque o cursor em "cachorro preguiçoso".
+
+  7. Digite ve para selecionar "cachorro preguiçoso".
+
+  8. Digite S] para envolver a seleção com colchetes.
+
+---> A raposa marrom ágil pula sobre o cachorro preguiçoso
+
+### Lição 6.5: PADRÕES COMUNS DE ENVOLVIMENTO
+
+** Pratique operações comuns de envolvimento. **
+
+**Operações de alteração:**
+- `cs])` - Alterar `[olá]` para `(olá)`
+- `cs"'` - Alterar `"olá"` para `'olá'`
+- `cs'<q>` - Alterar `'olá'` para `<q>olá</q>`
+
+**Operações de deleção:**
+- `ds"` - Alterar `"olá"` para `olá`
+- `ds]` - Alterar `[olá]` para `olá`
+- `dst` - Deletar tag HTML envolvente
+
+**Operações de adição:**
+- `ysiw"` - Alterar `olá` para `"olá"`
+- `ysiw]` - Alterar `olá` para `[olá]`
+- `ysiw[` - Alterar `olá` para `[ olá ]` (com espaços)
+
+**Modo visual:**
+- Selecione texto com `v`, então `S"` - Envolver seleção com aspas
+- Selecione texto com `v`, então `S]` - Envolver seleção com colchetes
+
+Texto de prática para envolvimentos:
+---> Altere "estas aspas" para [colchetes]
+---> Delete (estes parênteses) e 'estas aspas'
+---> Adicione envolvimentos a palavra e seleção
+---> A <tag>conteúdo</tag> pode ser alterada com cst
+
+**Lista de exercícios:**
+1. Altere `"aspas"` para `'aspas'` usando `cs"'`
+2. Delete `[colchetes]` usando `ds[`
+3. Adicione aspas a `palavra` usando `ysiw"`
+4. Selecione `seleção de texto` e envolva com `S]`
+5. Altere `<tag>` para `"aspas"` usando `cst"`
+
+## Lição 7: Macros Básicos
+
+### Lição 7.1: GRAVANDO UM MACRO
 
 ** Digite q seguido de uma letra para começar a gravar um macro. **
 

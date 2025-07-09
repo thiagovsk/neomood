@@ -515,9 +515,185 @@ By default, searches are case sensitive. You can:
 ---> CAT in uppercase vs cat in lowercase
 ---> Case sensitive searching: cat Cat CAT
 
-## Lesson 6: Basic Macros
+### Lesson 5.5: FIND AND TILL CHARACTER NAVIGATION
 
-### Lesson 6.1: RECORDING A MACRO
+** Type f{char} to find a character, t{char} to go till (before) it. **
+
+**Note**: In NeoMood with Flash.nvim, f and t commands are enhanced with visual feedback.
+
+  1. Move to the line below marked --->.
+
+  2. Type f] to find the ']' character.
+
+  3. Press f again to find the next ']' character.
+
+  4. Press F to find the previous ']' character (backwards).
+
+  5. Type t( to go till (before) the '(' character.
+
+  6. Press t again to go to the next '(' character.
+
+---> The quick [brown] fox jumps (over) the lazy [dog] in the (forest)
+
+### Lesson 5.6: COMBINING FIND/TILL WITH ACTIONS
+
+** Use f and t with delete, change, and yank commands. **
+
+  1. Move to the line below marked --->.
+
+  2. Type df] to delete until and including the ']' character.
+
+  3. Type dt) to delete until (but not including) the ')' character.
+
+  4. Type cf( to change until and including the '(' character.
+
+  5. Type ct" to change until (but not including) the '"' character.
+
+  6. Type yf; to yank until and including the ';' character.
+
+  7. Type yt, to yank until (but not including) the ',' character.
+
+---> Remove [this text] and (change this) "quoted text"; keep, this part
+
+**Common f/t usage patterns:**
+- `dt]` - Delete until `]` character
+- `df]` - Delete until and including `]` character
+- `ct"` - Change until `"` character
+- `cf"` - Change until and including `"` character
+- `yt)` - Yank until `)` character
+- `yf)` - Yank until and including `)` character
+
+**Remember with Flash.nvim**: 
+- `f` finds and includes the character
+- `t` goes till (stops before) the character
+- Press `f` again to find the next occurrence of the same character
+- Press `F` to find the previous occurrence of the same character
+- Press `t` again to go till the next occurrence
+- Press `T` to go till the previous occurrence
+
+## Lesson 6: Text Surroundings (Nvim-Surround)
+
+### Lesson 6.1: CHANGING SURROUNDINGS
+
+** Type cs followed by two characters to change surroundings. **
+
+  1. Move to the line below marked --->.
+
+  2. Put cursor inside the brackets around "text".
+
+  3. Type cs]) to change `[` to `)`.
+
+  4. Put cursor inside the quotes around "hello".
+
+  5. Type cs"' to change `"` to `'`.
+
+  6. Put cursor inside the single quotes around 'world'.
+
+  7. Type cs'<q> to change `'` to `<q>`.
+
+---> Change [text] and "hello" and 'world' surroundings
+
+### Lesson 6.2: DELETING SURROUNDINGS
+
+** Type ds followed by a character to delete surroundings. **
+
+  1. Move to the line below marked --->.
+
+  2. Put cursor inside the quotes around "delete these quotes".
+
+  3. Type ds" to delete the surrounding quotes.
+
+  4. Put cursor inside the brackets around "remove brackets".
+
+  5. Type ds] to delete the surrounding brackets.
+
+  6. Put cursor inside the parentheses around "remove parentheses".
+
+  7. Type ds) to delete the surrounding parentheses.
+
+---> Delete "delete these quotes" and [remove brackets] and (remove parentheses)
+
+### Lesson 6.3: ADDING SURROUNDINGS TO WORDS
+
+** Type ysiw followed by a character to surround a word. **
+
+  1. Move to the line below marked --->.
+
+  2. Put cursor on the word "hello".
+
+  3. Type ysiw" to surround the word with quotes.
+
+  4. Put cursor on the word "world".
+
+  5. Type ysiw] to surround the word with brackets.
+
+  6. Put cursor on the word "vim".
+
+  7. Type ysiw[ to surround the word with brackets and spaces.
+
+---> Surround hello and world and vim with different characters
+
+### Lesson 6.4: ADDING SURROUNDINGS TO SELECTION
+
+** Select text with v, then type S followed by a character. **
+
+  1. Move to the line below marked --->.
+
+  2. Put cursor on "quick brown".
+
+  3. Type v to start visual selection.
+
+  4. Move to select "quick brown fox".
+
+  5. Type S" to surround the selection with quotes.
+
+  6. Put cursor on "lazy dog".
+
+  7. Type ve to select "lazy dog".
+
+  8. Type S] to surround the selection with brackets.
+
+---> The quick brown fox jumps over the lazy dog
+
+### Lesson 6.5: COMMON SURROUND PATTERNS
+
+** Practice common surround operations. **
+
+**Change operations:**
+- `cs])` - Change `[hello]` to `(hello)`
+- `cs"'` - Change `"hello"` to `'hello'`
+- `cs'<q>` - Change `'hello'` to `<q>hello</q>`
+
+**Delete operations:**
+- `ds"` - Change `"hello"` to `hello`
+- `ds]` - Change `[hello]` to `hello`
+- `dst` - Delete surrounding HTML tag
+
+**Add operations:**
+- `ysiw"` - Change `hello` to `"hello"`
+- `ysiw]` - Change `hello` to `[hello]`
+- `ysiw[` - Change `hello` to `[ hello ]` (with spaces)
+
+**Visual mode:**
+- Select text with `v`, then `S"` - Surround selection with quotes
+- Select text with `v`, then `S]` - Surround selection with brackets
+
+Practice text for surroundings:
+---> Change "these quotes" to [brackets]
+---> Delete (these parentheses) and 'these quotes'
+---> Add surroundings to word and selection
+---> The <tag>content</tag> can be changed with cst
+
+**Exercise checklist:**
+1. Change `"quotes"` to `'quotes'` using `cs"'`
+2. Delete `[brackets]` using `ds[`
+3. Add quotes to `word` using `ysiw"`
+4. Select `text selection` and surround with `S]`
+5. Change `<tag>` to `"quotes"` using `cst"`
+
+## Lesson 7: Basic Macros
+
+### Lesson 7.1: RECORDING A MACRO
 
 ** Type q followed by a letter to start recording a macro. **
 

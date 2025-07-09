@@ -258,6 +258,36 @@ Obs: You need to enable the plugin on obsidian.lua first to use.
 - `<C-p>` - Yanky cycle forward
 - `g<C-p>` - Yanky cycle backward
 
+### Text Surroundings - [kylechui/nvim-surround](https://github.com/kylechui/nvim-surround)
+#### Change Surroundings
+- `cs])` - Change `[` to `)`
+- `cs"'` - Change `"` to `'`
+- `cs'<q>` - Change `'` to `<q>`
+- `cst"` - Change tag to `"`
+
+#### Delete Surroundings  
+- `ds"` - Delete surrounding quotes
+- `ds]` - Delete surrounding brackets
+- `dst` - Delete surrounding tag
+
+#### Add Surroundings (Normal Mode)
+- `ysiw"` - Surround inner word with quotes
+- `ysiw]` - Surround inner word with brackets
+- `ysiw[` - Surround inner word with brackets (with spaces)
+- `ysit` - Surround inner tag with another tag
+
+#### Add Surroundings (Visual Mode)
+- `S"` - Surround selection with quotes
+- `S]` - Surround selection with brackets
+- `S[` - Surround selection with brackets (with spaces)
+- `St` - Surround selection with tag
+
+#### Common Examples
+- `cs])` - Change `[hello]` to `(hello)`
+- `ds"` - Change `"hello"` to `hello`
+- `ysiw"` - Change `hello` to `"hello"`
+- Select text with `v`, then `S]` - Change `hello` to `[hello]`
+
 ## Ruby-Specific Mappings (Ruby files only)
 
 These mappings are only available when editing Ruby files:
