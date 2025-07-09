@@ -86,10 +86,12 @@ This document provides a comprehensive reference of all key mappings in NeoMood,
 - `m` - Per buffer bookmark
 
 ### Code Completion with IA (Codeium) - [Exafunction/codeium.vim](https://github.com/Exafunction/codeium.vim)
+- `<C-j>` (Insert) - Accept AI suggestion
 - `<C-f>` (Insert) - Accept next word
-- `<C-j>` (Insert) - Accept completion
-- `<C-b>` (Insert) - Cycle completions
-- `<C-]>` (Insert) - Clear completion
+- `<C-l>` (Insert) - Accept next line
+- `<C-b>` (Insert) - Cycle to next completion
+- `<C-]>` (Insert) - Clear suggestions
+- `<C-u>` (Insert) - Manual trigger completion
 
 ### CMP Completion (auto complete) - [hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 - `<Tab>` - Select next item

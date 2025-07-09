@@ -7,6 +7,15 @@ This handbook provides quick access to the most important mappings and commands 
 ### Leader Key
 - **Leader**: `<space>`
 
+### AI Code Completion (Codeium)
+- `<C-j>` - Accept AI suggestion
+- `<C-f>` - Accept next word
+- `<C-l>` - Accept next line
+- `<C-b>` - Cycle through completions
+- `<C-]>` - Clear suggestions
+- `<C-u>` - Manual trigger
+
+
 ### File Operations
 - `<leader><space>` - Find files
 - `<leader>e` - Toggle file explorer
