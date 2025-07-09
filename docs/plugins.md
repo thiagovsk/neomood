@@ -79,6 +79,16 @@ This document provides a comprehensive overview of all plugins included in NeoMo
 **Features**: Line signs, hunk navigation, staging/resetting, blame  
 **Key Mappings**: `]g`/`[g` (hunk navigation), `<leader>gs` (stage), `<leader>gb` (blame)
 
+### [Diffview](https://github.com/sindrets/diffview.nvim)
+**Purpose**: Git diff viewer and file history browser  
+**Features**: Side-by-side diff view, file history with commit details, commit browsing  
+**Key Mappings**: `<leader>gd` (current file history), `<leader>gh` (all commits history), `<leader>qd` (close diffview)
+
+### [Tardis](https://github.com/fredeeb/tardis.nvim)
+**Purpose**: Git time machine for browsing file history  
+**Features**: Navigate through git history, view file changes over time, commit restoration  
+**Key Mappings**: `<leader>gt` (open time machine), `<C-j>/<C-k>` (navigate history), `<leader>gm` (show commit message), `<C-g>` (restore version)
+
 ### [Vim Fugitive](https://github.com/tpope/vim-fugitive)
 **Purpose**: Git integration  
 **Features**: Git commands, blame, diff, merge conflict resolution  

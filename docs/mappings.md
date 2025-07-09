@@ -143,6 +143,19 @@ This document provides a comprehensive reference of all key mappings in NeoMood,
 - `<leader>gb` - Blame line
 - `ih` - Select hunk (text object, example: vih)
 
+### Git Diff Viewer - [sindrets/diffview.nvim](https://github.com/sindrets/diffview.nvim)
+- `<leader>gd` - Current file history
+- `<leader>gh` - All commits history
+- `<leader>qd` - Close diffview
+
+### Git Time Machine - [fredeeb/tardis.nvim](https://github.com/fredeeb/tardis.nvim)
+- `<leader>gt` - Open git time machine
+- `<C-j>` - Next entry in log (older) **(In Tardis buffer)**
+- `<C-k>` - Previous entry in log (newer) **(In Tardis buffer)**
+- `<leader>gm` - Show revision message for current revision **(In Tardis buffer)**
+- `<C-g>` - Replace contents of origin buffer with tardis buffer **(In Tardis buffer)**
+- `q` - Quit tardis **(In Tardis buffer)**
+
 ### Git Blame - [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive)
 - `<leader>gB` - Git blame (fugitive)
 
