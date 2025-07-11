@@ -141,8 +141,8 @@ This document provides a comprehensive overview of all plugins included in NeoMo
 
 ### [Tmux Awesome Manager](https://github.com/otavioschwanck/tmux-awesome-manager.nvim)
 **Purpose**: Tmux session and terminal management  
-**Features**: Project-specific commands, Rails shortcuts, LazyGit integration  
-**Key Mappings**: `<leader>gg` (LazyGit), `<leader>rr` (Rails console), `<leader>ll` (list terminals)
+**Features**: Project-specific commands, Rails shortcuts, terminal integration  
+**Key Mappings**: `<leader>rr` (Rails console), `<leader>ll` (list terminals)
 
 ## Text Manipulation
 
@@ -214,6 +214,11 @@ This document provides a comprehensive overview of all plugins included in NeoMo
 **Features**: Todo highlighting, completion tracking
 
 ## Additional Utility Plugins
+
+### [Snacks.nvim](https://github.com/folke/snacks.nvim)
+**Purpose**: Collection of small QoL plugins  
+**Features**: LazyGit integration, notifications, terminal utilities, dashboard enhancements  
+**Key Mappings**: `<leader>gg` (LazyGit)
 
 ### [Nvim Surround](https://github.com/kylechui/nvim-surround)
 **Purpose**: Surround text with brackets, quotes, and other delimiters  

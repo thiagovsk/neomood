@@ -227,7 +227,6 @@ Obs: You need to enable the plugin on obsidian.lua first to use.
 - `<leader>l` (Visual) - Send text to tmux
 - `<leader>ll` - Search open terminals
 - `<leader>lk` - Kill all terms
-- `<leader>gg` - LazyGit
 - `<leader>rr` - Rails console
 - `<leader>oy` - Yarn install
 - `<leader>oYc` - Yarn check-translations
@@ -237,6 +236,9 @@ Obs: You need to enable the plugin on obsidian.lua first to use.
 - `<leader>rg` - Rails generate
 - `<leader>rd` - Rails destroy
 - `<leader>ri` - Rails db:migrate
+
+### Git Operations - [Snacks.nvim](https://github.com/folke/snacks.nvim)
+- `<leader>gg` - LazyGit (via snacks)
 
 ### Treesitter - [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - `g]f` - Swap next function

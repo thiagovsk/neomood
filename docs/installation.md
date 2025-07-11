@@ -251,8 +251,37 @@ tmux
 
 For detailed tmux workflow setup, see the [Tmux Workflow Guide](tmux-workflow.md).
 
+### 5. LazyGit Neovim Remote Configuration (Optional)
 
-### 5. AI Code Completion Setup (Optional)
+To configure LazyGit to open files directly in Neovim when using the 'e' key, add this configuration to your shell profile:
+
+**Add to ~/.zshrc or ~/.bashrc:**
+```bash
+# Use Neovim Remote
+if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
+    alias nvim=nvr -cc split --remote-wait +'set bufhidden=wipe'
+fi
+
+if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
+    export VISUAL="nvr -cc split --remote-wait +'set bufhidden=wipe'"
+    export EDITOR="nvr -cc split --remote-wait +'set bufhidden=wipe'"
+else
+    export VISUAL="nvim"
+    export EDITOR="nvim"
+fi
+```
+
+**Add to LazyGit configuration (~/.config/lazygit/config.yml):**
+```yaml
+os:
+  editPreset: "nvim-remote"
+  edit: 'nvr --remote-send ''<CMD>q<CR><CMD>lua vim.cmd("e " .. {{filename}})<CR>'''
+  editAtLine: 'nvr --remote-send ''<CMD>q<CR><CMD>lua vim.cmd("e " .. {{filename}})<CR>{{line}}G'''
+```
+
+This allows you to press 'e' on any file in LazyGit and have it open directly in your current Neovim instance.
+
+### 6. AI Code Completion Setup (Optional)
 
 NeoMood includes Codeium for AI-powered code completion. To enable it:
 
@@ -262,7 +291,7 @@ NeoMood includes Codeium for AI-powered code completion. To enable it:
 
 Follow the prompts to authenticate with Codeium. If you don't want AI completion, you can remove the plugin by deleting `lua/plugins/codeium.lua`.
 
-### 6. Plugin Updates (Optional)
+### 7. Plugin Updates (Optional)
 
 To update all plugins:
 

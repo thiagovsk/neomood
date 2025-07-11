@@ -42,14 +42,6 @@ return {
         vim.keymap.set("n", key, tmux.run(opts), { silent = true, noremap = true, desc = opts.name })
       end
 
-      set("<leader>gg", {
-        cmd = "lazygit",
-        name = "LazyGit",
-        open_as = "window",
-        visit_first_call = true,
-        read_after_cmd = false,
-      })
-
       set("<leader>rr", {
         cmd = "rails console",
         name = "rails console",
@@ -62,14 +54,6 @@ return {
       vim.keymap.set("n", "<leader>#", function()
         require("tmux-awesome-manager").run_project_terms()
       end, { silent = true, noremap = true, desc = "Run Project Terms" })
-
-      set("<leader>gg", {
-        cmd = "lazygit",
-        name = "LazyGit",
-        open_as = "window",
-        visit_first_call = true,
-        read_after_cmd = false,
-      })
 
       set("<leader>+", {
         cmd = "bundle exec rubocop -A",

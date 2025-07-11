@@ -231,7 +231,6 @@ The [tmux-awesome-manager](https://github.com/otavioschwanck/tmux-awesome-manage
 - `<leader>#` - Run all project-defined startup commands
 
 ### Pre-configured Development Commands
-- `<leader>gg` - LazyGit in tmux window
 - `<leader>rr` - Rails console in tmux window
 - `<leader>rb` - Bundle install (auto-closes after 2s)
 - `<leader>rg` - Rails generate (prompts for generator type)
