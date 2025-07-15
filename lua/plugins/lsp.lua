@@ -21,7 +21,6 @@ return {
         ensure_installed = mason_langs,
       })
 
-      local lspconfig = require("lspconfig")
       local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
 
       vim.diagnostic.config({ virtual_text = true })
@@ -31,14 +30,16 @@ return {
       end
 
       for _, lang in ipairs(mason_langs) do
-        lspconfig[lang].setup({ capabilities = lsp_capabilities })
+        vim.lsp.config(lang, {
+          capabilities = lsp_capabilities,
+        })
       end
 
-      lspconfig.ts_ls.setup({
+      vim.lsp.config("ts_ls", {
         capabilities = lsp_capabilities,
       })
 
-      lspconfig.solargraph.setup({
+      vim.lsp.config("solargraph", {
         capabilities = lsp_capabilities,
         on_attach = function(client)
           client.server_capabilities.documentFormattingProvider = false
@@ -56,10 +57,15 @@ return {
         },
       })
 
-      lspconfig.rubocop.setup({
+      vim.lsp.config("rubocop", {
         capabilities = lsp_capabilities,
         cmd = { "bundle", "exec", "rubocop", "--lsp" },
       })
+
+      -- Enable servers not managed by mason
+      vim.lsp.enable("ts_ls")
+      vim.lsp.enable("solargraph")
+      vim.lsp.enable("rubocop")
 
       local border_opts = {
         border = { { "╭" }, { "─" }, { "╮" }, { "│" }, { "╯" }, { "─" }, { "╰" }, { "│" } },
