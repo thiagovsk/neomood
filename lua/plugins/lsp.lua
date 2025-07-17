@@ -39,19 +39,24 @@ return {
         capabilities = lsp_capabilities,
       })
 
+      local solargraph_opts = {
+        intellisense = false,
+        codeCompletion = false,
+        formatting = false,
+        autoformat = false,
+        useBundler = true,
+        diagnostics = false,
+      }
+
       vim.lsp.config("solargraph", {
         capabilities = lsp_capabilities,
         on_attach = function(client)
           client.server_capabilities.documentFormattingProvider = false
         end,
         cmd = { "bundle", "exec", "solargraph", "stdio" },
-        init_options = {
-          intellisense = false,
-          codeCompletion = false,
-          formatting = false,
-          autoformat = false,
-          useBundler = true,
-          diagnostics = false,
+        init_options = solargraph_opts,
+        settings = {
+          solargraph = solargraph_opts,
         },
       })
 
