@@ -104,6 +104,9 @@ function M.set()
   n("[d", "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Prev Diagnostic")
   n("]d", "<cmd>lua vim.diagnostic.goto_next()<cr>", "Next Diagnostic")
 
+  n("<C-d>", "<C-d>zz", "Page Down")
+  n("<C-u>", "<C-u>zz", "Page Up")
+
   vim.cmd([[
     nnoremap <expr> 0 (col('.') - 1) == match(getline('.'),'\S') ? "<Home>" : "^"
     vnoremap <expr> 0 (col('.') - 1) == match(getline('.'),'\S') ? "<Home>" : "^"

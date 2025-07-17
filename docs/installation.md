@@ -304,6 +304,17 @@ To update all plugins:
 
 ### Common Issues
 
+**Solargraph not working**:
+- Check if Solargraph is installed via Mason instead of using the system Ruby installation (prefer using outside Mason, to remove, just run `:MasonUninstall solargraph`)
+
+- If Rubocop and Solargraph are not installed in your project on gemfile, you can remove the `cmd = ...` lines at `lua/plugins/lsp.lua:47` and `lua/plugins/lsp.lua:62` (by default, we try to use with bundler)
+- If Solargraph still doesn't work, try using `ruby_lsp` instead by adding to `lsp.lua`:
+
+  ```lua
+  vim.lsp.config("ruby_lsp", {})
+  vim.lsp.enable("ruby_lsp")
+  ```
+
 **Problem with endwise (tree-sitter)**:
 - Do a :Lazy update
 - Do a :Lazy build nvim-treesitter-endwise

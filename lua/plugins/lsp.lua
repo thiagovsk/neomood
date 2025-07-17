@@ -45,15 +45,13 @@ return {
           client.server_capabilities.documentFormattingProvider = false
         end,
         cmd = { "bundle", "exec", "solargraph", "stdio" },
-        settings = {
-          solargraph = {
-            intellisense = false,
-            codeCompletion = false,
-            formatting = false,
-            autoformat = false,
-            useBundler = true,
-            diagnostics = false,
-          },
+        init_options = {
+          intellisense = false,
+          codeCompletion = false,
+          formatting = false,
+          autoformat = false,
+          useBundler = true,
+          diagnostics = false,
         },
       })
 
