@@ -315,9 +315,9 @@ To update all plugins:
   vim.lsp.enable("ruby_lsp")
   ```
 
-**Problem with endwise (tree-sitter)**:
-- Do a :Lazy update
-- Do a :Lazy build nvim-treesitter-endwise
+**nvim-treesitter-endwise errors when editing files**:
+- Run `:Lazy update`
+- Then run `:Lazy build nvim-treesitter-endwise`
 
 **Plugins not loading**:
 - Ensure you have internet connection
