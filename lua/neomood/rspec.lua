@@ -19,45 +19,6 @@ local function close_diagnostic_floats()
   end
 end
 
-local function custom_previewer(opts)
-  opts = opts or {}
-  return previewers.new_buffer_previewer({
-    title = "File Preview",
-    define_preview = function(self, entry, status)
-      local filepath = entry.entry.filepath
-      local linenr = tonumber(entry.entry.linenr)
-
-      if filepath and vim.fn.filereadable(filepath) == 1 then
-        vim.api.nvim_buf_set_lines(self.state.bufnr, 0, -1, false, vim.fn.readfile(filepath))
-        local line_count = vim.api.nvim_buf_line_count(self.state.bufnr)
-
-        local ft = vim.filetype.match({ filename = filepath })
-
-        if ft then
-          vim.bo[self.state.bufnr].filetype = ft
-
-          if pcall(require, "nvim-treesitter") then
-            require("nvim-treesitter.highlight").attach(self.state.bufnr, ft)
-          else
-            vim.cmd("syntax enable")
-          end
-        end
-
-        if linenr and linenr > 0 and linenr <= line_count then
-          vim.schedule(function()
-            vim.api.nvim_buf_add_highlight(self.state.bufnr, -1, "Visual", linenr - 1, 0, -1)
-            vim.api.nvim_win_set_cursor(status.preview_win, { linenr, 0 })
-            -- center cursor on preview_win
-            vim.cmd("normal! zz")
-          end)
-        end
-      else
-        print("File not found or not readable:", filepath)
-        vim.api.nvim_buf_set_lines(self.state.bufnr, 0, -1, false, { "File not found: " .. filepath })
-      end
-    end,
-  })
-end
 
 function M.go_to_backtrace()
   -- get the diagnostic on the line of type quickfix, get the message
@@ -113,62 +74,71 @@ function M.go_to_backtrace()
         i = i + 1
       end
 
-      pickers
-          .new({}, {
-            prompt_title = "User Files",
-            finder = finders.new_table({
-              results = backtraces,
-              entry_maker = function(entry)
-                return {
-                  value = entry.path,
-                  display = entry.display or entry.path,
-                  ordinal = (entry.order or "") .. (entry.display or "") .. entry.path,
-                  entry = entry,
-                }
-              end,
-            }),
-            sorter = conf.generic_sorter({}),
-            previewer = custom_previewer({}),
-            attach_mappings = function(prompt_bufnr, _)
-              actions.select_default:replace(function()
-                actions.close(prompt_bufnr)
-                local local_of_backtrace = action_state.get_selected_entry().value
+      local fzf_entries = {}
+      for _, entry in ipairs(backtraces) do
+        table.insert(fzf_entries, entry.display)
+      end
 
-                local parsed_file = vim.split(local_of_backtrace, ":")[1]
-                local parsed_line = vim.split(local_of_backtrace, ":")[2]
+      require("fzf-lua").fzf_exec(fzf_entries, {
+        prompt = "Backtrace Files> ",
+        previewer = "builtin",
+        preview = {
+          type = "file",
+          file = function(item)
+            for _, backtrace in ipairs(backtraces) do
+              if backtrace.display == item then
+                return backtrace.filepath .. ":" .. backtrace.linenr
+              end
+            end
+          end,
+        },
+        actions = {
+          ["default"] = function(selected)
+            if not selected or #selected == 0 then return end
 
-                if not vim.fn.filereadable(parsed_file) then
-                  print("File not found: " .. parsed_file)
-                  return
-                end
+            local selected_item = selected[1]
+            local selected_backtrace = nil
 
-                local win_exists = false
+            for _, backtrace in ipairs(backtraces) do
+              if backtrace.display == selected_item then
+                selected_backtrace = backtrace
+                break
+              end
+            end
 
-                local absolute_parsed_file = vim.fn.fnamemodify(parsed_file, ":p")
+            if not selected_backtrace then return end
 
-                for _, win in ipairs(vim.api.nvim_list_wins()) do
-                  local buf = vim.api.nvim_win_get_buf(win)
-                  local buf_file = vim.api.nvim_buf_get_name(buf)
-                  local absolute_buf_file = vim.fn.fnamemodify(buf_file, ":p")
+            local parsed_file = selected_backtrace.filepath
+            local parsed_line = selected_backtrace.linenr
 
-                  if absolute_buf_file == absolute_parsed_file then
-                    vim.api.nvim_set_current_win(win)
+            if not vim.fn.filereadable(parsed_file) then
+              print("File not found: " .. parsed_file)
+              return
+            end
 
-                    vim.cmd("normal! " .. parsed_line .. "G")
-                    win_exists = true
-                    break
-                  end
-                end
+            local win_exists = false
+            local absolute_parsed_file = vim.fn.fnamemodify(parsed_file, ":p")
 
-                if not win_exists then
-                  vim.cmd("vsplit " .. parsed_file)
-                  vim.cmd("normal! " .. parsed_line .. "G")
-                end
-              end)
-              return true
-            end,
-          })
-          :find()
+            for _, win in ipairs(vim.api.nvim_list_wins()) do
+              local buf = vim.api.nvim_win_get_buf(win)
+              local buf_file = vim.api.nvim_buf_get_name(buf)
+              local absolute_buf_file = vim.fn.fnamemodify(buf_file, ":p")
+
+              if absolute_buf_file == absolute_parsed_file then
+                vim.api.nvim_set_current_win(win)
+                vim.cmd("normal! " .. parsed_line .. "G")
+                win_exists = true
+                break
+              end
+            end
+
+            if not win_exists then
+              vim.cmd("vsplit " .. parsed_file)
+              vim.cmd("normal! " .. parsed_line .. "G")
+            end
+          end,
+        },
+      })
     end
   else
     print("No diagnostics found here")
