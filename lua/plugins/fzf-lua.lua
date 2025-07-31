@@ -6,6 +6,9 @@ return {
       "otavioschwanck/fzf-lua-enchanted-files"
     },
     opts = {
+      winopts = {
+        width = 0.9,
+      },
       keymap = {
         fzf = {
           ["ctrl-q"] = "select-all+accept",
