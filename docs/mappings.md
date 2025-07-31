@@ -180,15 +180,16 @@ This document provides a comprehensive reference of all key mappings in NeoMood,
 ### Multiple Cursors - [jake-stewart/multicursor.nvim](https://github.com/jake-stewart/multicursor.nvim)
 - `<C-k>` - Add cursor above
 - `<C-j>` - Add cursor below
+- `<Leader>n` - Match all cursors
 - `<leader><C-k>` - Skip cursor above
 - `<leader><C-j>` - Skip cursor below
 - `<M-d>` - Match add cursor
 - `<C-n>` - Match add cursor
 - `<C-q>` - Match skip cursor
+- `<leader>x` - Delete cursor (when multiple active)
 - `<c-leftmouse>` - Handle mouse
 - `<left>` - Previous cursor (when multiple active)
 - `<right>` - Next cursor (when multiple active)
-- `<leader>x` - Delete cursor (when multiple active)
 - `<esc>` - Toggle/clear cursors (when multiple active)
 
 ### Notes (Obsidian) - [epwalsh/obsidian.nvim](https://github.com/epwalsh/obsidian.nvim)

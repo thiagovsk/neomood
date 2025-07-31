@@ -11,6 +11,7 @@ return {
       -- Add or skip cursor above/below the main cursor.
       set({ "n", "x" }, "<C-k>", function() mc.lineAddCursor(-1) end)
       set({ "n", "x" }, "<C-j>", function() mc.lineAddCursor(1) end)
+      set({ "n", "x" }, "<leader>n", function() mc.matchAllAddCursors() end, { desc = "Match All Cursors" })
       set({ "n", "x" }, "<leader><C-k>", function() mc.lineSkipCursor(-1) end)
       set({ "n", "x" }, "<leader><C-j>", function() mc.lineSkipCursor(1) end)
 

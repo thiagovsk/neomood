@@ -87,6 +87,7 @@ This handbook provides quick access to the most important mappings and commands 
 - `<C-j>` / `<C-k>` - Add cursor below/above
 - `<C-n>` - Add cursor on match
 - `<C-q>` - Skip cursor on match
+- `<Leader>n` - Add cursor all matches
 
 ### Snippets
 - `<C-N>` - Expand snippet or jump to next placeholder
