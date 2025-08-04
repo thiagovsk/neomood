@@ -19,7 +19,6 @@ function M.set()
   opt.list = true            -- Show some invisible characters (tabs...
   opt.mouse = "a"            -- Enable mouse mode
   opt.number = true          -- Print line number
-  opt.pumblend = 10          -- Popup blend
   opt.pumheight = 10         -- Maximum number of entries in a popup
   opt.scrolloff = 4          -- Lines of context
   opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "globals" }
@@ -34,15 +33,18 @@ function M.set()
   opt.splitbelow = true      -- Put new windows below current
   opt.splitright = true      -- Put new windows right of current
   opt.tabstop = 2            -- Number of spaces tabs count for
-  opt.termguicolors = true   -- True color support
+  opt.termguicolors = false  -- True color support
   opt.timeoutlen = 300
+  opt.lazyredraw = true      -- Don't redraw while executing macros
+  opt.ttyfast = true         -- Faster terminal connection
   opt.undofile = true
   opt.undolevels = 10000
-  opt.updatetime = 200               -- Save swap file and trigger CursorHold
+  opt.updatetime = 1000              -- Save swap file and trigger CursorHold (reduced frequency)
   opt.wildmode = "longest:full,full" -- Command-line completion mode
   opt.winminwidth = 5                -- Minimum window width
   opt.wrap = false                   -- Disable line wrap
   opt.pumblend = 0
+  opt.redrawtime = 1500              -- Time to spend on syntax highlighting
   vim.o.spelllang = "pt_br"
 
   opt.splitkeep = "cursor"
