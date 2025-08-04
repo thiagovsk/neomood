@@ -33,7 +33,7 @@ function M.set()
   opt.splitbelow = true      -- Put new windows below current
   opt.splitright = true      -- Put new windows right of current
   opt.tabstop = 2            -- Number of spaces tabs count for
-  opt.termguicolors = false  -- True color support
+  opt.termguicolors = true   -- True color support
   opt.timeoutlen = 300
   opt.lazyredraw = true      -- Don't redraw while executing macros
   opt.ttyfast = true         -- Faster terminal connection
