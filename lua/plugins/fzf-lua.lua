@@ -10,6 +10,7 @@ return {
         width = 0.9,
         preview = {
           horizontal = "right:50%", -- if you dont use ultrawide, you can decrease this percent
+          flip_columns = 160,
           winopts = {
             number = false,
           }
