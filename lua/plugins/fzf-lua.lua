@@ -9,7 +9,7 @@ return {
       winopts = {
         width = 0.9,
         preview = {
-          horizontal = "right:40%",
+          horizontal = "right:50%", -- if you dont use ultrawide, you can decrease this percent
           winopts = {
             number = false,
           }
