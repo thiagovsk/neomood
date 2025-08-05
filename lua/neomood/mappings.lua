@@ -87,7 +87,7 @@ function M.set()
   local neovim_file_path = vim.fn.stdpath("config")
 
   -- h
-  n("<leader>hD", ":!rm -rf ~/.local/share/nvim/swap/*<CR>", "Delete SWP files")
+  n("<leader>hD", function() vim.cmd("Bufferize lua require('neomood.utils').debug_info()") end, "Debug Info")
   n("<leader>hr", require("neomood.lsp-utils").restart_lsp, "Restart LSP")
   n("<leader>hhd", "<cmd>edit" .. neovim_file_path .. "/docs/mappings.md<CR>", "Open Documentation")
   n("<leader>hhh", "<cmd>edit" .. neovim_file_path .. "/handbook.md<CR>", "Open Handbook")
