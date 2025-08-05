@@ -35,7 +35,15 @@ end
 function M.debug_info()
   print("=== NEOVIM DEBUG INFO ===")
   print("Timestamp:", os.date("%Y-%m-%d %H:%M:%S"))
-  print("Uptime (approx):", vim.g.start_time and (vim.fn.localtime() - vim.g.start_time) or "unknown")
+  -- Calculate uptime from process start
+  local handle = io.popen("ps -o etime= -p " .. vim.fn.getpid())
+  local uptime = "unknown"
+  if handle then
+    uptime = handle:read("*l")
+    handle:close()
+    uptime = uptime and vim.trim(uptime) or "unknown"
+  end
+  print("Uptime:", uptime)
   print("Memory (KB):", collectgarbage("count"))
   print("Loaded modules:", vim.tbl_count(package.loaded))
   print("Buffer count:", #vim.api.nvim_list_bufs())
