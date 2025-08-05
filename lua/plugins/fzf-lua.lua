@@ -8,6 +8,12 @@ return {
     opts = {
       winopts = {
         width = 0.9,
+        preview = {
+          horizontal = "right:40%",
+          winopts = {
+            number = false,
+          }
+        },
       },
       keymap = {
         fzf = {
