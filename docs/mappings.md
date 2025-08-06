@@ -108,9 +108,12 @@ This document provides a comprehensive reference of all key mappings in NeoMood,
 
 ### Flash Jump - [folke/flash.nvim](https://github.com/folke/flash.nvim)
 - `s` - Flash jump
+- `S` - Flash jump to classes (CamelCase patterns, cursor lands at end of match)
 - `r` (Operator) - Remote Flash
 - `R` (Operator/Visual) - Treesitter Search
 - `<C-s>` (Command) - Toggle Flash Search
+
+**Tip**: Combine `S` with `gd` (go to definition) for efficient class navigation - use `S` to jump to a class name, then `gd` to go to its definition.
 
 ### File Explorer - [nvim-neo-tree/neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)
 - `<leader>e` - Toggle Neo-tree

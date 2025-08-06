@@ -47,6 +47,25 @@ return {
           end,
           desc = "Toggle Flash Search",
         },
+        {
+          "S",
+          mode = { "n", "x", "o" },
+          function()
+            require("flash").jump({
+              search = {
+                mode = "search",
+              },
+              pattern = [[\<[A-Z][a-zA-Z0-9]*\>]],
+              jump = {
+                pos = "end",
+              },
+              label = {
+                uppercase = false,
+              },
+            })
+          end,
+          desc = "Flash Jump to Class Calls",
+        },
       }
     end,
   },
