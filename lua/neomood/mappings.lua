@@ -101,6 +101,9 @@ function M.set()
   n("<leader>wl", "<C-w>l", "Move Right")
   n("<leader>wo", "<C-w>o", "Close Others")
 
+  -- b (buffers)
+  n("<leader>bC", utils.close_all_buffers_except_current, "Close All Buffers Except Current")
+
   n("[d", "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Prev Diagnostic")
   n("]d", "<cmd>lua vim.diagnostic.goto_next()<cr>", "Next Diagnostic")
 

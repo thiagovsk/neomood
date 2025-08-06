@@ -179,6 +179,7 @@ This document provides a comprehensive reference of all key mappings in NeoMood,
 ### Buffer Management - [echasnovski/mini.bufremove](https://github.com/echasnovski/mini.bufremove)
 - `<leader>k` - Delete buffer
 - `<leader>bD` - Delete buffer (force)
+- `<leader>bC` - Close all buffers except current
 
 ### Multiple Cursors - [jake-stewart/multicursor.nvim](https://github.com/jake-stewart/multicursor.nvim)
 - `<C-k>` - Add cursor above

@@ -212,4 +212,37 @@ function M.debug_info()
   print("\n=== END DEBUG ===")
 end
 
+function M.close_all_buffers_except_current()
+  local current_buf = vim.api.nvim_get_current_buf()
+  local buffers = vim.api.nvim_list_bufs()
+  
+  for _, buf in ipairs(buffers) do
+    -- Skip current buffer, terminal buffers, and non-file buffers
+    if buf ~= current_buf and vim.api.nvim_buf_is_valid(buf) then
+      local buf_type = vim.api.nvim_buf_get_option(buf, 'buftype')
+      local modified = vim.api.nvim_buf_get_option(buf, 'modified')
+      
+      -- Skip terminal and other special buffers
+      if buf_type == '' and not modified then
+        vim.api.nvim_buf_delete(buf, { force = false })
+      elseif buf_type == '' and modified then
+        -- Ask user what to do with modified buffers
+        local buf_name = vim.api.nvim_buf_get_name(buf)
+        local filename = buf_name ~= '' and vim.fn.fnamemodify(buf_name, ':t') or '[No Name]'
+        local choice = vim.fn.confirm('Buffer "' .. filename .. '" has unsaved changes. What do you want to do?', 
+                                    '&Save and close\n&Close without saving\n&Keep open', 3)
+        if choice == 1 then
+          vim.api.nvim_buf_call(buf, function() vim.cmd('write') end)
+          vim.api.nvim_buf_delete(buf, { force = false })
+        elseif choice == 2 then
+          vim.api.nvim_buf_delete(buf, { force = true })
+        end
+        -- choice == 3 or 0 (ESC) means keep open, so we do nothing
+      end
+    end
+  end
+  
+  vim.notify("Closed all buffers except current one", vim.log.levels.INFO)
+end
+
 return M

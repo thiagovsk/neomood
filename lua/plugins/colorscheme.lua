@@ -3,6 +3,7 @@ return {
     "catppuccin/nvim",
     name = "catppuccin",
     lazy = false,
+    commit = "fa42eb5e26819ef58884257d5ae95dd0552b9a66",
     config = function()
       require("catppuccin").setup({
         flavour = "mocha",
