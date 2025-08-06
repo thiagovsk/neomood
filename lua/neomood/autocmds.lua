@@ -66,18 +66,25 @@ function M.set()
   })
 
 
-  -- Refresh gitsigns when terminal closes (to catch git changes made in terminal)
-  vim.api.nvim_create_autocmd("TermClose", {
+  -- Refresh gitsigns when focusing a buffer (since watch_dir is disabled)
+  local gitsigns_timer = nil
+
+  vim.api.nvim_create_autocmd({ "BufEnter", "FocusGained", "TermClose" }, {
     callback = function()
-      if package.loaded["gitsigns"] then
-        vim.defer_fn(function()
-          vim.cmd("Gitsigns refresh")
-          vim.cmd("Gitsigns reset_base")
-        end, 100)
+      if package.loaded["gitsigns"] and not vim.bo.readonly and vim.fn.expand('%') ~= '' then
+        if gitsigns_timer then
+          gitsigns_timer:close()
+        end
+
+        gitsigns_timer = vim.defer_fn(function()
+          vim.cmd("silent! Gitsigns detach")
+          vim.cmd("silent! Gitsigns attach")
+          gitsigns_timer = nil
+        end, 200)
       end
     end
   })
-
+  --
   for i = 1, #autocommands, 1 do
     vim.api.nvim_create_autocmd(autocommands[i][1], { pattern = autocommands[i][2], callback = autocommands[i][3] })
   end
