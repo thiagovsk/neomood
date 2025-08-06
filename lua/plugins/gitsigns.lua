@@ -11,7 +11,17 @@ return {
         changedelete = { text = "▎" },
         untracked = { text = "▎" },
       },
+      -- Completely disable git directory watching
+      watch_gitdir = {
+        enable = false
+      },
+      update_debounce = 100,
       on_attach = function(buffer)
+        -- Don't attach gitsigns to terminal buffers
+        if vim.bo[buffer].buftype == 'terminal' then
+          return false
+        end
+
         local gs = package.loaded.gitsigns
 
         local function map(mode, l, r, desc)
