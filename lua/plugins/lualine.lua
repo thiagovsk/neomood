@@ -94,7 +94,7 @@ return {
           lualine_a = { "mode" },
           lualine_b = { { filename_with_icon, color = { gui = 'bold' } }, { path, color = { fg = catppuccin_colors.pink } } },
           lualine_c = { arrow_module, "diagnostics", "diff" },
-          lualine_x = { open_terms, "branch" },
+          lualine_x = { "lsp_status", open_terms, "branch" },
           lualine_y = { "progress" },
           lualine_z = { "location" },
         },
