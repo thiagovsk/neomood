@@ -65,6 +65,19 @@ function M.set()
     end,
   })
 
+
+  -- Refresh gitsigns when terminal closes (to catch git changes made in terminal)
+  vim.api.nvim_create_autocmd("TermClose", {
+    callback = function()
+      if package.loaded["gitsigns"] then
+        vim.defer_fn(function()
+          vim.cmd("Gitsigns refresh")
+          vim.cmd("Gitsigns reset_base")
+        end, 100)
+      end
+    end
+  })
+
   for i = 1, #autocommands, 1 do
     vim.api.nvim_create_autocmd(autocommands[i][1], { pattern = autocommands[i][2], callback = autocommands[i][3] })
   end
