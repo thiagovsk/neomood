@@ -88,6 +88,8 @@ This handbook provides quick access to the most important mappings and commands 
 - `<C-n>` - Add cursor on match
 - `<C-q>` - Skip cursor on match
 - `<Leader>n` - Add cursor all matches
+- `<Leader>x` - Remove Cursor from current match
+- Left Arrow and Right Arrow - Move through cursors (good for removing)
 
 ### Snippets
 - `<C-N>` - Expand snippet or jump to next placeholder
