@@ -5,7 +5,7 @@ require("neomood.autocmd_langs.base").create_au_for_lang("ruby", function(buf)
   local v = utils.v_buf
 
   -- Leader root to be quick
-  n("<leader>=", ":w | :silent !bundle exec rubocop -A %<CR>:e %<CR>", "Rubocop", buf.buf)
+  n("<leader>=", ":w | :silent !bundle exec standardrb --fix %<CR>:e %<CR>", "standardrb", buf.buf)
 
   n("<leader>tc", require("neomood.rspec").clear_diagnostics, "Clear RSpec diagnostics")
   n("<leader>mc", require("neomood.lang_helpers.ruby").get_class_name, "Get Class Name", buf.buf)
@@ -17,7 +17,7 @@ require("neomood.autocmd_langs.base").create_au_for_lang("ruby", function(buf)
 
   n("<leader>a", require("neomood.lang_helpers.ruby").open_test_alternate, "Go to Test", buf.buf)
   n("<leader>A", require("neomood.lang_helpers.ruby").open_test_alternate_split, "Go to Test (split)", buf.buf)
-  n("<leader>cF", ":w | :silent !bundle exec rubocop -A %<CR>:e %<CR>", "Run Rubocop", buf.buf)
+  -- n("<leader>cF", ":w | :silent !bundle exec rubocop -A %<CR>:e %<CR>", "Run Rubocop", buf.buf)
 
   v("<leader>mf", "<cmd>lua require('ruby-toolkit').extract_to_function()<CR>", "Extract Function", buf.buf)
 end)

@@ -56,8 +56,8 @@ return {
       end, { silent = true, noremap = true, desc = "Run Project Terms" })
 
       set("<leader>+", {
-        cmd = "bundle exec rubocop -A",
-        name = "rubocop",
+        cmd = "bundle exec standardrb --fix",
+        name = "satandardrb",
         open_as = "pane",
         close_on_timer = 2,
         visit_first_call = false,
