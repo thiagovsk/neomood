@@ -59,18 +59,16 @@ return {
         cmd = "bundle exec rubocop -A",
         name = "rubocop",
         open_as = "pane",
-        close_on_timer = 2,
         visit_first_call = false,
-        focus_when_call = false,
+        focus_when_call = true,
       })
 
       set("<leader>rb", {
         cmd = "bundle install",
         name = "Bundle Install",
         open_as = "pane",
-        close_on_timer = 2,
         visit_first_call = false,
-        focus_when_call = false,
+        focus_when_call = true,
       })
 
       set("<leader>rg", {
@@ -81,9 +79,8 @@ return {
             question = "Rails generate: ",
             required = true,
             open_as = "pane",
-            close_on_timer = 4,
             visit_first_call = false,
-            focus_when_call = false,
+            focus_when_call = true,
           },
         },
       })
@@ -93,7 +90,6 @@ return {
         name = "Rails Destroy",
         questions = { { question = "Rails destroy: ", required = true } },
         open_as = "pane",
-        close_on_timer = 4,
         visit_first_call = false,
         focus_when_call = false,
       })
@@ -102,7 +98,6 @@ return {
         cmd = "rails db:migrate",
         name = "Rails db:migrate",
         open_as = "pane",
-        close_on_timer = 4,
         visit_first_call = false,
         focus_when_call = false,
       })
