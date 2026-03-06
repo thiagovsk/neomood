@@ -4,6 +4,9 @@ return {
     event = "VeryLazy",
     config = function()
       require("yanky").setup({
+        system_clipboard = {
+          sync_with_ring = false,
+        },
         ring = {
           history_length = 50,
           storage = "shada",
