@@ -44,7 +44,7 @@ return {
         codeCompletion = false,
         formatting = false,
         autoformat = false,
-        useBundler = true,
+        -- useBundler = true,
         diagnostics = false,
       }
 
@@ -53,22 +53,28 @@ return {
         on_attach = function(client)
           client.server_capabilities.documentFormattingProvider = false
         end,
-        cmd = { "bundle", "exec", "solargraph", "stdio" },
+        -- cmd = { "bundle", "exec", "solargraph", "stdio" },
         init_options = solargraph_opts,
         settings = {
           solargraph = solargraph_opts,
         },
       })
-
-      vim.lsp.config("rubocop", {
-        capabilities = lsp_capabilities,
-        cmd = { "bundle", "exec", "rubocop", "--lsp" },
-      })
+      --
+      -- vim.lsp.config("rubocop", {
+      --   capabilities = lsp_capabilities,
+      --   cmd = { "bundle", "exec", "rubocop", "--lsp" },
+      -- })
 
       -- Enable servers not managed by mason
       vim.lsp.enable("ts_ls")
       vim.lsp.enable("solargraph")
-      vim.lsp.enable("rubocop")
+      -- vim.lsp.config("standardrb", {
+      --   capabilities = lsp_capabilities,
+      --   cmd = { "bundle", "exec", "standardrb", "--lsp" }
+      -- })
+      --
+      -- vim.lsp.enable("standardrb")
+      -- vim.lsp.enable("rubocop")
 
       local border_opts = {
         border = { { "╭" }, { "─" }, { "╮" }, { "│" }, { "╯" }, { "─" }, { "╰" }, { "│" } },
