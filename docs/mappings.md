@@ -57,6 +57,7 @@ This document provides a comprehensive reference of all key mappings in NeoMood,
 - `<leader>rj` - Find Jobs
 - `<leader>rI` - Reset Rails database
 - `<leader>rK` - Kill Ruby instances
+- `<leader>rp` - Find Policies
 
 ### Window Management
 - `<leader>wq` - Close window
